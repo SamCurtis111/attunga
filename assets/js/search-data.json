@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "PASA",
-            "content": "MTPASA . Total Availability . . . STPASA . st.plotly_chart(regional_pasa(regional_df, selected_region, date1, date2), use_container_width=True) . &lt;streamlit.delta_generator.DeltaGenerator at 0x1d3aec0e4c8&gt; .",
+            "content": "MTPASA . Total Availability . . . STPASA . st.title(&quot;Covid19 USA Data from Wikipedia&quot;) st.markdown( &quot;&quot;&quot; This app is for visualizing the Covid19 data for USA which is collected from the wikipedia site https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States. User can select the Metrics Type from the drop-down list to see the trend in last 15 days &quot;&quot;&quot; ) . from io import StringIO, BytesIO import base64 fig = regional_pasa(regional_df, selected_region, date1, date2) st.plotly_chart(fig, use_container_width=True) mybuff = StringIO() fig.write_html(mybuff, include_plotlyjs=&#39;cdn&#39;) mybuff = BytesIO(mybuff.getvalue().encode()) b64 = base64.b64encode(mybuff.read()).decode() href = f&#39;&lt;a href=&quot;data:text/html;charset=utf-8;base64, {b64}&quot; download=&quot;plot.html&quot;&gt;Download plot&lt;/a&gt;&#39; st.markdown(href, unsafe_allow_html=True) . &lt;streamlit.delta_generator.DeltaGenerator at 0x1d3aec0e4c8&gt; .",
             "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/03/PASA.html",
             "relUrl": "/jupyter/2021/02/03/PASA.html",
             "date": " • Feb 3, 2021"
