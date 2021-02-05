@@ -4,9 +4,9 @@
         "post0": {
             "title": "Weather Data",
             "content": "Temperature Forecasts . Taken from BoM. Dashed line displays yesterdays forecast. Solid line is the most current BoM forecast . . . Forecast Precipitation . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/03/Weather-Data.html",
-            "relUrl": "/jupyter/2021/02/03/Weather-Data.html",
-            "date": " • Feb 3, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/04/Weather-Data.html",
+            "relUrl": "/jupyter/2021/02/04/Weather-Data.html",
+            "date": " • Feb 4, 2021"
         }
         
     
@@ -15,9 +15,9 @@
         ,"post1": {
             "title": "Title",
             "content": "import pandas as pd import plotly import plotly.express as px from IPython.display import display_html, HTML from io import StringIO . . df = px.data.iris() fig = px.scatter(df, x=&quot;sepal_width&quot;, y=&quot;sepal_length&quot;, color=&quot;species&quot;) . HTML(fig.to_html(include_plotlyjs=&#39;cdn&#39;)) . . .",
-            "url": "https://samcurtis111.github.io/attunga/2021/02/03/Plotly_Testing.html",
-            "relUrl": "/2021/02/03/Plotly_Testing.html",
-            "date": " • Feb 3, 2021"
+            "url": "https://samcurtis111.github.io/attunga/2021/02/04/Plotly_Testing.html",
+            "relUrl": "/2021/02/04/Plotly_Testing.html",
+            "date": " • Feb 4, 2021"
         }
         
     
@@ -25,10 +25,10 @@
     
         ,"post2": {
             "title": "PASA",
-            "content": "MTPASA . Total Availability . . . STPASA . st.title(&quot;Covid19 USA Data from Wikipedia&quot;) st.markdown( &quot;&quot;&quot; This app is for visualizing the Covid19 data for USA which is collected from the wikipedia site https://en.wikipedia.org/wiki/COVID-19_pandemic_in_the_United_States. User can select the Metrics Type from the drop-down list to see the trend in last 15 days &quot;&quot;&quot; ) . from io import StringIO, BytesIO import base64 fig = regional_pasa(regional_df, selected_region, date1, date2) st.plotly_chart(fig, use_container_width=True) mybuff = StringIO() fig.write_html(mybuff, include_plotlyjs=&#39;cdn&#39;) mybuff = BytesIO(mybuff.getvalue().encode()) b64 = base64.b64encode(mybuff.read()).decode() href = f&#39;&lt;a href=&quot;data:text/html;charset=utf-8;base64, {b64}&quot; download=&quot;plot.html&quot;&gt;Download plot&lt;/a&gt;&#39; st.markdown(href, unsafe_allow_html=True) . &lt;streamlit.delta_generator.DeltaGenerator at 0x1d3aec0e4c8&gt; .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/03/PASA.html",
-            "relUrl": "/jupyter/2021/02/03/PASA.html",
-            "date": " • Feb 3, 2021"
+            "content": "MTPASA . Total Availability . . . MTPASA Change . &#34;regions = pd.DataFrame({&#39;RegionID&#39;: [&#39;NSW1&#39;,&#39;QLD1&#39;,&#39;SA1&#39;,&#39;VIC1&#39;,&#39;TAS1&#39;]}) ndate1 = pd.DataFrame({&#39;Date1&#39;: regional_df.Publish_Datetime.unique()}) ndate2 = pd.DataFrame({&#39;Date2&#39;: regional_df.Publish_Datetime.unique()}) n n# define selection dropdowns nregion_dropdown = alt.binding_select(options=list(regions.RegionID)) nregion_selection = alt.selection_single(bind=region_dropdown, fields=[&#39;RegionID&#39;], name=&#39;Region_&#39;) n ndate1_dropdown = alt.binding_select(options=list(date1.Date1)) ndate1_selection = alt.selection_single(bind=date1_dropdown, fields=[&#39;Publish_Datetime&#39;]) n ndate2_dropdown = alt.binding_select(options=list(date2.Date2)) ndate2_selection = alt.selection_single(bind=date2_dropdown, fields=[&#39;Publish_Datetime&#39;]) n ncolor = alt.condition(date1_selection, alt.Color(&#39;RegionID:N&#39;), alt.value(&#39;lightgray&#39;)) n nchart = alt.Chart(regional_df).mark_rect().encode( n x=&#39;Date&#39;, n y=&#39;Availability&#39;, n color=&#39;Publish_Datetime&#39;, n opacity=alt.condition( n (region_selection &amp; (date1_selection | date2_selection)), n )) n nchart&#34; . alt.data_transformers.disable_max_rows() # altair doesnt plot &gt; 5000 row DFs... disable this (think about longer-term file size consequences) #scratch - using just one dropdown to start region_selection = alt.selection_multi(fields=[&#39;RegionID&#39;]) region_color = alt.condition(region_selection, alt.Color(&#39;RegionID:N&#39;), alt.value(&#39;lightgray&#39;)) make_region_selector = alt.Chart(region_selection).mark_rect().encode(y=&#39;RegionID&#39;, color=region_color).add_selection(region_selection) chart = alt.Chart(regional_df).mark_line().encode( x=&#39;Day&#39;, y=alt.Y(&#39;PasaAvailability&#39;), color=&#39;RegionID&#39;).transform_filter(region_selection).properties( width=650, height=400, title=&#39;Regional MTPASA by Date&#39;).interactive() chart . STPASA .",
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/04/PASA.html",
+            "relUrl": "/jupyter/2021/02/04/PASA.html",
+            "date": " • Feb 4, 2021"
         }
         
     
@@ -37,9 +37,9 @@
         ,"post3": {
             "title": "NEM Data",
             "content": "Last ran: 2021-02-04 12:29:18 . NEM Price Data . 180it [00:00, 13291.81it/s] . Averaged Daily Prices . Note that current day and 8 day ahead are partial days, do not use these figures for pricing / modelling Click on individual states in chart to add / remove them for closer inspection . REGIONID NSW1 QLD1 SA1 TAS1 VIC1 RUN_DATETIME INTERVAL_DATE 2021-02-04 39.61 49.92 38.16 35.82 36.55 2021/02/04 07:30:00 2021-02-05 56.36 56.59 -7.37 30.82 29.72 2021/02/04 07:30:00 2021-02-06 43.24 54.70 -297.64 213.48 -318.70 2021/02/04 07:30:00 2021-02-07 30.07 82.02 222.64 40.65 9.39 2021/02/04 07:30:00 2021-02-08 45.02 62.31 -117.84 308.23 10.38 2021/02/04 07:30:00 2021-02-09 42.43 44.08 558.90 114.46 26.62 2021/02/04 07:30:00 2021-02-10 35.17 35.03 2273.05 73.42 30.55 2021/02/04 07:30:00 2021-02-11 30.41 29.83 31.87 34.83 27.23 2021/02/04 07:30:00 . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/03/NEM-Data.html",
-            "relUrl": "/jupyter/2021/02/03/NEM-Data.html",
-            "date": " • Feb 3, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/04/NEM-Data.html",
+            "relUrl": "/jupyter/2021/02/04/NEM-Data.html",
+            "date": " • Feb 4, 2021"
         }
         
     
