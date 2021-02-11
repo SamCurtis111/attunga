@@ -4,9 +4,9 @@
         "post0": {
             "title": "Weather Data",
             "content": "Temperature Forecasts . Taken from BoM. Dashed line displays yesterdays forecast. Solid line is the most current BoM forecast . . . Forecast Precipitation . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/09/Weather-Data.html",
-            "relUrl": "/jupyter/2021/02/09/Weather-Data.html",
-            "date": " • Feb 9, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/10/Weather-Data.html",
+            "relUrl": "/jupyter/2021/02/10/Weather-Data.html",
+            "date": " • Feb 10, 2021"
         }
         
     
@@ -15,9 +15,9 @@
         ,"post1": {
             "title": "PASA",
             "content": "MTPASA . Total Availability . . . MTPASA Change . STPASA .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/09/PASA.html",
-            "relUrl": "/jupyter/2021/02/09/PASA.html",
-            "date": " • Feb 9, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/10/PASA.html",
+            "relUrl": "/jupyter/2021/02/10/PASA.html",
+            "date": " • Feb 10, 2021"
         }
         
     
@@ -26,9 +26,9 @@
         ,"post2": {
             "title": "NEM Data",
             "content": "Last ran: 2021-02-11 08:20:30 . NEM Price Data . 180it [00:00, 15043.83it/s] . Averaged Daily Prices . Note that current day and 8 day ahead are partial days, do not use these figures for pricing / modelling Click on individual states in chart to add / remove them for closer inspection . REGIONID NSW1 QLD1 SA1 TAS1 VIC1 RUN_DATETIME INTERVAL_DATE 2021-02-11 38.10 36.87 752.04 1415.16 -61.84 2021/02/11 07:30:00 2021-02-12 82.69 79.09 511.44 23.76 25.00 2021/02/11 07:30:00 2021-02-13 34.69 45.37 1489.33 1.73 1.61 2021/02/11 07:30:00 2021-02-14 29.78 31.05 2167.72 45.07 -184.86 2021/02/11 07:30:00 2021-02-15 35.55 44.63 33.64 39.71 23.08 2021/02/11 07:30:00 2021-02-16 58.03 57.42 771.58 156.06 55.68 2021/02/11 07:30:00 2021-02-17 38.48 37.10 2037.47 60.58 37.27 2021/02/11 07:30:00 2021-02-18 35.17 34.26 39.70 31.22 30.74 2021/02/11 07:30:00 . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/09/NEM-Data.html",
-            "relUrl": "/jupyter/2021/02/09/NEM-Data.html",
-            "date": " • Feb 9, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/10/NEM-Data.html",
+            "relUrl": "/jupyter/2021/02/10/NEM-Data.html",
+            "date": " • Feb 10, 2021"
         }
         
     
