@@ -13,6 +13,17 @@
   
     
         ,"post1": {
+            "title": "SRA End of Day Position Report",
+            "content": "Report Ran: 15-02-2021 12:30:59 . Section 1 - Current Qtr . 1.1 Attunga Holdings . Location Year Qtr Current Holding VWAP Current SRA Value (p. Unit) Total PnL . 0 NSWQLD | 2021 | Q1 | 12 | 1813.17 | 775.17 | -12456.02 | . 1 SAVIC | 2021 | Q1 | 30 | 7250.00 | 2629.07 | -138627.86 | . 2 VICSA | 2021 | Q1 | 20 | 5730.80 | 4403.97 | -26536.68 | . . . Section 2 - Next Qtr . 2.1 Attunga Holdings . Location Year Qtr Current Holding VWAP . 0 NSWQLD | 2021 | Q2 | 50 | 199.74 | . 1 NSWVIC | 2021 | Q2 | 10 | 1659.84 | . 2 SAVIC | 2021 | Q2 | 20 | 4320.04 | . 3 VICSA | 2021 | Q2 | 20 | 1690.50 | . Tranche Settlement Prices . YEAR QTR TRANCHE NSWQLD QLDNSW SAVIC VICSA NSWVIC VICNSW . 0 2021 | Q2 | 01 | $915.00 | $7,226.00 | $5,494.06 | $3,399.10 | $2,184.00 | $4,026.00 | . 1 2021 | Q2 | 02 | $427.02 | $7,332.97 | $5,494.00 | $2,730.00 | $2,184.00 | $4,306.00 | . 2 2021 | Q2 | 03 | $387.00 | $7,316.00 | $4,933.00 | $1,885.00 | $1,856.00 | $4,026.00 | . 3 2021 | Q2 | 04 | $300.00 | $9,001.00 | $4,368.00 | $2,149.00 | $1,638.00 | $4,350.00 | . 4 2021 | Q2 | 05 | $218.40 | $10,000.00 | $6,592.80 | $2,184.00 | $1,650.00 | $5,220.00 | . 5 2021 | Q2 | 06 | $226.00 | $11,003.00 | $7,005.05 | $1,528.80 | $1,659.84 | $6,200.00 | . 6 2021 | Q2 | 07 | $150.00 | $10,679.76 | $10,507.57 | $1,509.00 | $1,706.00 | $4,793.00 | . 7 2021 | Q2 | 08 | $114.40 | $10,893.35 | $8,616.20 | $1,131.75 | $1,000.85 | $6,216.00 | . 8 2021 | Q2 | 09 | $140.19 | $12,000.00 | $3,500.79 | $1,711.00 | $982.80 | $5,416.00 | . 9 2021 | Q2 | 10 | $160.36 | $11,750.00 | $3,850.00 | $1,780.00 | $1,300.84 | $4,007.84 | . 10 2021 | Q2 | 10 | $303.84 | $9,764.91 | $6,036.15 | $2,000.77 | $1,616.23 | $4,860.53 | .",
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/14/SRA-Position.html",
+            "relUrl": "/jupyter/2021/02/14/SRA-Position.html",
+            "date": " • Feb 14, 2021"
+        }
+        
+    
+  
+    
+        ,"post2": {
             "title": "PASA",
             "content": "MTPASA . Total Availability . . . MTPASA Change . STPASA .",
             "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/14/PASA.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "NEM Data",
             "content": "Last ran: 2021-02-15 09:26:54 . NEM Price Data . 180it [00:00, 60157.35it/s] . Averaged Daily Prices . Note that current day and 8 day ahead are partial days, do not use these figures for pricing / modelling Click on individual states in chart to add / remove them for closer inspection . REGIONID NSW1 QLD1 SA1 TAS1 VIC1 RUN_DATETIME INTERVAL_DATE 2021-02-15 33.78 34.77 24.10 37.36 22.27 2021/02/15 07:30:00 2021-02-16 63.32 61.96 4175.99 79.25 76.36 2021/02/15 07:30:00 2021-02-17 45.81 44.22 5138.81 109.98 98.78 2021/02/15 07:30:00 2021-02-18 44.90 43.39 3176.80 47.97 44.53 2021/02/15 07:30:00 2021-02-19 40.95 40.83 5121.04 72.78 67.84 2021/02/15 07:30:00 2021-02-20 33.65 32.93 1362.75 74.13 31.36 2021/02/15 07:30:00 2021-02-21 30.32 30.60 -115.05 72.85 10.35 2021/02/15 07:30:00 2021-02-22 32.54 31.61 24.82 32.32 22.33 2021/02/15 07:30:00 . . .",
             "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/14/NEM-Data.html",
@@ -34,7 +45,7 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "An Example Markdown Post",
             "content": "Example Markdown Post . Basic setup . Jekyll requires blog post files to be named according to the following format: . YEAR-MONTH-DAY-filename.md . Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and filename is whatever file name you choose, to remind yourself what this post is about. .md is the file extension for markdown files. . The first line of the file should start with a single hash character, then a space, then your title. This is how you create a “level 1 heading” in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line ## File names above. . Basic formatting . You can use italics, bold, code font text, and create links. Here’s a footnote 1. Here’s a horizontal rule: . . Lists . Here’s a list: . item 1 | item 2 | . And a numbered list: . item 1 | item 2 | Boxes and stuff . This is a quotation . . You can include alert boxes …and… . . You can include info boxes Images . . Code . You can format text and code per usual . General preformatted text: . # Do a thing do_thing() . Python code and output: . # Prints &#39;2&#39; print(1+1) . 2 . Formatting text as shell commands: . echo &quot;hello world&quot; ./some_script.sh --option &quot;value&quot; wget https://example.com/cat_photo1.png . Formatting text as YAML: . key: value - another_key: &quot;another value&quot; . Tables . Column 1 Column 2 . A thing | Another thing | . Tweetcards . Altair 4.0 is released! https://t.co/PCyrIOTcvvTry it with: pip install -U altairThe full list of changes is at https://t.co/roXmzcsT58 ...read on for some highlights. pic.twitter.com/vWJ0ZveKbZ . &mdash; Jake VanderPlas (@jakevdp) December 11, 2019 Footnotes . This is the footnote. &#8617; . |",
             "url": "https://samcurtis111.github.io/attunga/markdown/2020/01/14/test-markdown-post.html",
