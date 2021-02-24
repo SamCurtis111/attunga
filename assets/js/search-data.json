@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Weather Data",
-            "content": "Temperature Forecasts . Taken from BoM. Dashed line displays yesterdays forecast. Solid line is the most current BoM forecast . . . Forecast Precipitation .",
+            "content": "Temperature Forecasts . Taken from BoM. Dashed line displays yesterdays forecast. Solid line is the most current BoM forecast . . . Forecast Precipitation . . .",
             "url": "https://samcurtis111.github.io/attunga/jupyter/2021/02/23/Weather-Data.html",
             "relUrl": "/jupyter/2021/02/23/Weather-Data.html",
             "date": " • Feb 23, 2021"
