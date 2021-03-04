@@ -4,9 +4,9 @@
         "post0": {
             "title": "Weather Data",
             "content": "Temperature Forecasts . Taken from BoM. Dashed line displays yesterdays forecast. Solid line is the most current BoM forecast . . . Forecast Precipitation . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/02/Weather-Data.html",
-            "relUrl": "/jupyter/2021/03/02/Weather-Data.html",
-            "date": " • Mar 2, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/03/Weather-Data.html",
+            "relUrl": "/jupyter/2021/03/03/Weather-Data.html",
+            "date": " • Mar 3, 2021"
         }
         
     
@@ -15,9 +15,9 @@
         ,"post1": {
             "title": "SRA End of Day Position Report",
             "content": "Report Ran: 03-03-2021 15:00:40 . Section 1 - Current Qtr . 1.1 Attunga Holdings . Location Year Qtr Current Holding VWAP Current SRA Value (p. Unit) Total PnL . 0 NSWQLD | 2021 | Q1 | 12 | 1813.17 | 1513.11 | -3600.70 | . 1 SAVIC | 2021 | Q1 | 30 | 7250.00 | 2970.31 | -128390.78 | . 2 VICSA | 2021 | Q1 | 20 | 5730.80 | 6185.53 | 9094.59 | . . . Section 2 - Next Qtr . 2.1 Attunga Holdings . Location Year Qtr Current Holding VWAP . 0 NSWQLD | 2021 | Q2 | 50 | 199.74 | . 1 NSWVIC | 2021 | Q2 | 10 | 1659.84 | . 2 SAVIC | 2021 | Q2 | 20 | 4320.04 | . 3 VICSA | 2021 | Q2 | 20 | 1690.50 | . Tranche Settlement Prices . YEAR QTR TRANCHE NSWQLD QLDNSW SAVIC VICSA NSWVIC VICNSW . 0 2021 | Q2 | 01 | $915.00 | $7,226.00 | $5,494.06 | $3,399.10 | $2,184.00 | $4,026.00 | . 1 2021 | Q2 | 02 | $427.02 | $7,332.97 | $5,494.00 | $2,730.00 | $2,184.00 | $4,306.00 | . 2 2021 | Q2 | 03 | $387.00 | $7,316.00 | $4,933.00 | $1,885.00 | $1,856.00 | $4,026.00 | . 3 2021 | Q2 | 04 | $300.00 | $9,001.00 | $4,368.00 | $2,149.00 | $1,638.00 | $4,350.00 | . 4 2021 | Q2 | 05 | $218.40 | $10,000.00 | $6,592.80 | $2,184.00 | $1,650.00 | $5,220.00 | . 5 2021 | Q2 | 06 | $226.00 | $11,003.00 | $7,005.05 | $1,528.80 | $1,659.84 | $6,200.00 | . 6 2021 | Q2 | 07 | $150.00 | $10,679.76 | $10,507.57 | $1,509.00 | $1,706.00 | $4,793.00 | . 7 2021 | Q2 | 08 | $114.40 | $10,893.35 | $8,616.20 | $1,131.75 | $1,000.85 | $6,216.00 | . 8 2021 | Q2 | 09 | $140.19 | $12,000.00 | $3,500.79 | $1,711.00 | $982.80 | $5,416.00 | . 9 2021 | Q2 | 10 | $160.36 | $11,750.00 | $3,850.00 | $1,780.00 | $1,300.84 | $4,007.84 | . 10 2021 | Q2 | 10 | $303.84 | $9,764.91 | $6,036.15 | $2,000.77 | $1,616.23 | $4,860.53 | . 11 2021 | Q2 | 11 | $253.00 | $13,100.00 | $4,790.09 | $1,601.00 | $1,365.88 | $5,354.00 | .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/02/SRA-Position.html",
-            "relUrl": "/jupyter/2021/03/02/SRA-Position.html",
-            "date": " • Mar 2, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/03/SRA-Position.html",
+            "relUrl": "/jupyter/2021/03/03/SRA-Position.html",
+            "date": " • Mar 3, 2021"
         }
         
     
@@ -26,9 +26,9 @@
         ,"post2": {
             "title": "PASA",
             "content": "MTPASA . Total Availability . . . MTPASA Change . STPASA .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/02/PASA.html",
-            "relUrl": "/jupyter/2021/03/02/PASA.html",
-            "date": " • Mar 2, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/03/PASA.html",
+            "relUrl": "/jupyter/2021/03/03/PASA.html",
+            "date": " • Mar 3, 2021"
         }
         
     
@@ -37,9 +37,9 @@
         ,"post3": {
             "title": "NEM Data",
             "content": "Last ran: 2021-03-04 08:20:11 . NEM Price Data . 180it [00:00, 60210.12it/s] . Averaged Daily Prices . Note that current day and 8 day ahead are partial days, do not use these figures for pricing / modelling Click on individual states in chart to add / remove them for closer inspection . REGIONID NSW1 QLD1 SA1 TAS1 VIC1 RUN_DATETIME INTERVAL_DATE 2021-03-04 32.86 65.66 28.56 20.85 18.09 2021/03/04 07:30:00 2021-03-05 30.70 78.25 29.04 28.10 23.75 2021/03/04 07:30:00 2021-03-06 12.24 13.53 1328.40 28.15 6.80 2021/03/04 07:30:00 2021-03-07 -27.95 -20.96 1759.77 42.49 -28.99 2021/03/04 07:30:00 2021-03-08 72.05 89.62 7.96 30.25 24.09 2021/03/04 07:30:00 2021-03-09 70.24 102.73 -79.16 445.16 52.02 2021/03/04 07:30:00 2021-03-10 66.89 60.62 787.91 428.78 54.10 2021/03/04 07:30:00 2021-03-11 37.58 36.66 5105.69 55.38 36.51 2021/03/04 07:30:00 . . .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/02/NEM-Data.html",
-            "relUrl": "/jupyter/2021/03/02/NEM-Data.html",
-            "date": " • Mar 2, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/03/NEM-Data.html",
+            "relUrl": "/jupyter/2021/03/03/NEM-Data.html",
+            "date": " • Mar 3, 2021"
         }
         
     
@@ -48,9 +48,9 @@
         ,"post4": {
             "title": "Annualised Volatilities Report",
             "content": "from pathlib import Path import numpy as np import pandas as pd pd.set_option(&#39;display.max_rows&#39;, None) # prevent dfs from being truncated . data_path = Path(&quot;C:/Users/SamCurtis/AppData/Local/bipy/28095931/projects/02f1bf62483a4d82b93898b71672e018&quot;) / (&quot;tableau_vols.xlsx&quot;) raw_baseload = pd.read_excel(data_path, sheet_name=&#39;Baseload&#39;) raw_caps = pd.read_excel(data_path, sheet_name=&#39;Caps&#39;) raw_strips = pd.read_excel(data_path, sheet_name=&#39;Strips&#39;) last_update_path = Path(&quot;C:/Users/SamCurtis/AppData/Local/bipy/28095931/projects/02f1bf62483a4d82b93898b71672e018&quot;) / (&quot;volatility_data.xlsx&quot;) last_updated = pd.read_excel(last_update_path, sheet_name=&#39;last_updated&#39;) last_updated = last_updated[&#39;updated&#39;][0] . print(&#39;Last Updated: &#39;, last_updated) . Last Updated: 2021-03-03 17:04:56 . Baseload Contracts . baseload_pivot = pd.pivot_table(raw_baseload, index=[&quot;state&quot;, &quot;year&quot;,&quot;quater&quot;]) baseload_pivot = baseload_pivot.iloc[:,1:] baseload_pivot . annual monthly qtrly weekly . state year quater . NSW 2021 1 0.2772 | 0.4816 | 0.4630 | 0.0795 | . 2 0.1727 | 0.2151 | 0.1830 | 0.2940 | . 3 0.1803 | 0.2390 | 0.1932 | 0.2480 | . 4 0.1826 | 0.2316 | 0.1896 | 0.2216 | . 2022 1 0.1831 | 0.3440 | 0.2470 | 0.3338 | . 2 0.1553 | 0.2025 | 0.1773 | 0.2453 | . 3 0.1445 | 0.1592 | 0.1490 | 0.1567 | . 4 0.1429 | 0.1922 | 0.1568 | 0.2926 | . 2023 1 0.1537 | 0.2815 | 0.2071 | 0.2277 | . 2 0.1738 | 0.2332 | 0.1526 | 0.3413 | . 3 NaN | 0.2307 | 0.1670 | 0.2373 | . 4 NaN | 0.2138 | 0.1633 | 0.2925 | . 2024 1 NaN | 0.1968 | 0.1335 | 0.0893 | . 2 NaN | 0.1556 | 0.1213 | 0.1032 | . 3 NaN | 0.0403 | 0.0413 | 0.0000 | . 4 NaN | 0.0235 | 0.0362 | 0.0000 | . QLD 2021 1 0.2079 | 0.2814 | 0.3026 | 0.2235 | . 2 0.1769 | 0.1036 | 0.1425 | 0.1073 | . 3 0.1829 | 0.1661 | 0.1645 | 0.1853 | . 4 0.1859 | 0.2059 | 0.1848 | 0.2403 | . 2022 1 0.1519 | 0.2341 | 0.1800 | 0.3004 | . 2 0.1461 | 0.2111 | 0.1608 | 0.2555 | . 3 0.1430 | 0.1701 | 0.1420 | 0.2033 | . 4 0.1446 | 0.1884 | 0.1475 | 0.2233 | . 2023 1 0.1488 | 0.2726 | 0.1801 | 0.3662 | . 2 0.1689 | 0.2400 | 0.1599 | 0.3242 | . 3 NaN | 0.2268 | 0.1475 | 0.2551 | . 4 NaN | 0.2886 | 0.1841 | 0.5098 | . 2024 1 NaN | 0.1820 | 0.1317 | 0.0864 | . 2 NaN | 0.1462 | 0.1140 | 0.0869 | . 3 NaN | 0.1415 | 0.0948 | 0.0860 | . 4 NaN | 0.1559 | 0.0994 | 0.0864 | . SA 2021 1 0.2936 | 0.6853 | 0.4983 | 0.4503 | . 2 0.1970 | 0.2850 | 0.1979 | 0.0866 | . 3 0.1607 | 0.1766 | 0.1423 | 0.1046 | . 4 0.1732 | 0.2402 | 0.1656 | 0.3005 | . 2022 1 0.1842 | 0.2489 | 0.1917 | 0.0284 | . 2 0.1669 | 0.2613 | 0.1688 | 0.0000 | . 3 0.1731 | 0.2319 | 0.1448 | 0.1905 | . 4 0.1631 | 0.2217 | 0.1896 | 0.1012 | . 2023 1 0.1767 | 0.3240 | 0.2249 | 0.0323 | . 2 0.2498 | 0.3756 | 0.2319 | 0.0326 | . 3 NaN | 0.2959 | 0.1920 | 0.0330 | . 4 NaN | 0.2958 | 0.1995 | 0.0318 | . 2024 1 NaN | 0.2367 | 0.1885 | 0.0000 | . 2 NaN | 0.2630 | 0.3809 | 0.0000 | . 3 NaN | 0.1733 | 0.3404 | 0.0000 | . 4 NaN | 0.4327 | 0.2829 | 0.0000 | . VIC 2021 1 0.3686 | 0.9504 | 0.6319 | 0.2614 | . 2 0.2292 | 0.4213 | 0.2810 | 0.4247 | . 3 0.2050 | 0.3145 | 0.2219 | 0.3205 | . 4 0.2159 | 0.3399 | 0.2344 | 0.4185 | . 2022 1 0.2310 | 0.4339 | 0.2960 | 0.4703 | . 2 0.2150 | 0.4341 | 0.2786 | 0.6851 | . 3 0.2046 | 0.3997 | 0.2552 | 0.5121 | . 4 0.2334 | 0.5633 | 0.3507 | 0.5329 | . 2023 1 0.1869 | 0.4110 | 0.2761 | 0.3236 | . 2 0.1655 | 0.3406 | 0.2069 | 0.2819 | . 3 NaN | 0.3486 | 0.2059 | 0.2468 | . 4 NaN | 0.4243 | 0.2516 | 0.4680 | . 2024 1 NaN | 0.3027 | 0.2030 | 0.0000 | . 2 NaN | 0.1994 | 0.1227 | 0.0039 | . 3 NaN | 0.1852 | 0.1123 | 0.0000 | . 4 NaN | 0.2008 | 0.1225 | 0.0000 | . Caps . cap_pivot = pd.pivot_table(raw_caps, index=[&quot;state&quot;, &quot;year&quot;,&quot;quater&quot;]) cap_pivot = cap_pivot.iloc[:,1:] cap_pivot . annual monthly qtrly weekly . state year quater . NSW 2021 1 0.8250 | 2.0127 | 1.5102 | 1.5567 | . 2 0.4208 | 0.9586 | 0.6203 | 0.9759 | . 3 NaN | 0.3981 | 0.2766 | 0.3872 | . QLD 2021 1 0.6049 | 1.4364 | 1.0978 | 1.2608 | . 2 0.5156 | 1.1178 | 0.7298 | 2.1400 | . 3 NaN | 0.8506 | 0.6833 | 1.1542 | . SA 2021 1 0.7119 | 2.0921 | 1.3304 | 0.5584 | . 2 0.3279 | 0.8203 | 0.4867 | 0.0000 | . 3 NaN | 0.6226 | 0.3684 | 0.0000 | . VIC 2021 1 0.9565 | 2.6759 | 1.7572 | 2.0980 | . 2 0.3575 | 0.9935 | 0.6172 | 0.4140 | . 3 NaN | 0.6819 | 0.5728 | 0.4934 | . Strips . strips_pivot = pd.pivot_table(raw_strips, index=[&quot;state&quot;, &quot;year&quot;,&quot;prod_type&quot;]) strips_pivot = strips_pivot.iloc[:,1:] strips_pivot . annual monthly qtrly quater weekly . state year prod_type . NSW 2021 Cal 0.1777 | 0.2526 | 0.2324 | 4 | 0.2317 | . 2022 Cal 0.1349 | 0.1972 | 0.1611 | 4 | 0.2390 | . Fin 0.1545 | 0.2270 | 0.1850 | 2 | 0.2435 | . 2023 Cal NaN | 0.2306 | 0.1533 | 4 | 0.2707 | . Fin 0.1231 | 0.2066 | 0.1462 | 2 | 0.2365 | . 2024 Cal NaN | 0.0891 | 0.0674 | 4 | 0.0516 | . Fin NaN | 0.1751 | 0.1204 | 2 | 0.1735 | . QLD 2021 Cal 0.1665 | 0.1563 | 0.1749 | 4 | 0.1721 | . 2022 Cal 0.1287 | 0.1781 | 0.1435 | 4 | 0.2293 | . Fin 0.1456 | 0.1859 | 0.1574 | 2 | 0.2368 | . 2023 Cal NaN | 0.2295 | 0.1523 | 4 | 0.3932 | . Fin 0.1288 | 0.1959 | 0.1423 | 2 | 0.2881 | . 2024 Fin NaN | 0.1672 | 0.1161 | 2 | 0.2379 | . SA 2021 Cal 0.1550 | 0.2748 | 0.2031 | 4 | 0.1429 | . 2022 Cal 0.1383 | 0.2164 | 0.1454 | 4 | 0.0430 | . Fin 0.1287 | 0.1873 | 0.1332 | 2 | 0.0722 | . 2023 Cal NaN | 0.2949 | 0.1877 | 4 | 0.0324 | . Fin 0.1419 | 0.2552 | 0.1645 | 2 | 0.0541 | . 2024 Cal NaN | 0.2586 | 0.2440 | 4 | 0.0000 | . Fin NaN | 0.2553 | 0.1968 | 2 | 0.0147 | . VIC 2021 Cal 0.2150 | 0.4262 | 0.2919 | 4 | 0.3119 | . 2022 Cal 0.1893 | 0.3832 | 0.2479 | 4 | 0.5096 | . Fin 0.1954 | 0.3509 | 0.2364 | 2 | 0.4450 | . 2023 Cal NaN | 0.3671 | 0.2238 | 4 | 0.3108 | . Fin 0.1576 | 0.3518 | 0.2214 | 2 | 0.3800 | . 2024 Cal NaN | 0.2128 | 0.1348 | 4 | 0.0000 | . Fin NaN | 0.2695 | 0.1662 | 2 | 0.1559 | .",
-            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/02/Annualised-Volatilities.html",
-            "relUrl": "/jupyter/2021/03/02/Annualised-Volatilities.html",
-            "date": " • Mar 2, 2021"
+            "url": "https://samcurtis111.github.io/attunga/jupyter/2021/03/03/Annualised-Volatilities.html",
+            "relUrl": "/jupyter/2021/03/03/Annualised-Volatilities.html",
+            "date": " • Mar 3, 2021"
         }
         
     
