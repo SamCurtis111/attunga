@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>SRA End of Day Position Report | NEM Market Data Dashboard</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="SRA End of Day Position Report" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Interactive Dashboard of Market Data." />
+<meta property="og:description" content="Interactive Dashboard of Market Data." />
+<link rel="canonical" href="https://samcurtis111.github.io/attunga/jupyter/2021/04/05/SRA-Position.html" />
+<meta property="og:url" content="https://samcurtis111.github.io/attunga/jupyter/2021/04/05/SRA-Position.html" />
+<meta property="og:site_name" content="NEM Market Data Dashboard" />
+<meta property="og:image" content="https://samcurtis111.github.io/attunga/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-04-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://samcurtis111.github.io/attunga/jupyter/2021/04/05/SRA-Position.html","@type":"BlogPosting","headline":"SRA End of Day Position Report","dateModified":"2021-04-05T00:00:00-05:00","datePublished":"2021-04-05T00:00:00-05:00","image":"https://samcurtis111.github.io/attunga/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://samcurtis111.github.io/attunga/jupyter/2021/04/05/SRA-Position.html"},"description":"Interactive Dashboard of Market Data.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/attunga/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://samcurtis111.github.io/attunga/feed.xml" title="NEM Market Data Dashboard" /><link rel="shortcut icon" type="image/x-icon" href="/attunga/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/attunga/">NEM Market Data Dashboard</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/attunga/about/">About Me</a><a class="page-link" href="/attunga/search/">Search</a><a class="page-link" href="/attunga/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SRA End of Day Position Report</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-04-05T00:00:00-05:00" itemprop="datePublished">
+        Apr 5, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/attunga/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Section-1---Current-Qtr">Section 1 - Current Qtr </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#1.1-Attunga-Holdings">1.1 Attunga Holdings </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Section-2---Next-Qtr">Section 2 - Next Qtr </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#2.1-Attunga-Holdings">2.1 Attunga Holdings </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Tranche-Settlement-Prices">Tranche Settlement Prices </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Section-3---Historical-SRA-Data">Section 3 - Historical SRA Data </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#3.1-Historical-Payouts">3.1 Historical Payouts </a></li>
+<li class="toc-entry toc-h2"><a href="#3.3-Attunga-Holdings">3.3 Attunga Holdings </a></li>
+</ul>
+</li>
+</ul><body>
+<!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/SRA Position.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Report Ran: 05-04-2021 14:00:37
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Section-1---Current-Qtr">
+<a class="anchor" href="#Section-1---Current-Qtr" aria-hidden="true"><span class="octicon octicon-link"></span></a>Section 1 - Current Qtr<a class="anchor-link" href="#Section-1---Current-Qtr"> </a>
+</h1>
+<h2 id="1.1-Attunga-Holdings">
+<a class="anchor" href="#1.1-Attunga-Holdings" aria-hidden="true"><span class="octicon octicon-link"></span></a>1.1 Attunga Holdings<a class="anchor-link" href="#1.1-Attunga-Holdings"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>Year</th>
+      <th>Qtr</th>
+      <th>Current Holding</th>
+      <th>VWAP</th>
+      <th>Current SRA Value (p. Unit)</th>
+      <th>Total PnL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NSWQLD</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>54</td>
+      <td>211.17</td>
+      <td>-0.00</td>
+      <td>-11403.18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NSWVIC</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>873.81</td>
+      <td>1.20</td>
+      <td>-26178.29</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SAVIC</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>4431.36</td>
+      <td>0.55</td>
+      <td>-132924.29</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>VICNSW</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>4</td>
+      <td>8004.00</td>
+      <td>176.56</td>
+      <td>-31309.75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VICSA</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>25</td>
+      <td>1763.20</td>
+      <td>165.13</td>
+      <td>-39951.73</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<meta charset="utf-8">
+
+    <div>
+        
+                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+            <div id="6fc86d07-4cbd-4c1f-b230-e4014b083563" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+            <script type="text/javascript">
+                
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+                    
+                if (document.getElementById("6fc86d07-4cbd-4c1f-b230-e4014b083563")) {
+                    Plotly.newPlot(
+                        '6fc86d07-4cbd-4c1f-b230-e4014b083563',
+                        [{"line": {"width": 2}, "name": "NSWQLD Current Qtr Value p. Unit", "type": "scatter", "x": [0, 1, 2], "xaxis": "x", "y": [0.0, 0.0, 0.0], "yaxis": "y"}, {"line": {"dash": "dash", "width": 2}, "name": "NSWQLD Purchase VWAP ($)", "type": "scatter", "x": [0, 1, 2], "xaxis": "x", "y": [211.17, 211.17, 211.17], "yaxis": "y"}, {"line": {"width": 2}, "name": "NSWVIC Current Qtr Value p. Unit", "type": "scatter", "x": [0, 1, 2], "xaxis": "x2", "y": [0.028720146153846157, 1.2004018769230769, 1.2004018769230769], "yaxis": "y2"}, {"line": {"dash": "dash", "width": 2}, "name": "NSWVIC Purchase VWAP ($)", "type": "scatter", "x": [0, 1, 2], "xaxis": "x2", "y": [873.81, 873.81, 873.81], "yaxis": "y2"}, {"line": {"width": 2}, "name": "SAVIC Current Qtr Value p. Unit", "type": "scatter", "x": [0, 1, 2], "xaxis": "x3", "y": [0.0, 0.5504860779220779, 0.5504860779220779], "yaxis": "y3"}, {"line": {"dash": "dash", "width": 2}, "name": "SAVIC Purchase VWAP ($)", "type": "scatter", "x": [0, 1, 2], "xaxis": "x3", "y": [4431.36, 4431.36, 4431.36], "yaxis": "y3"}, {"line": {"width": 2}, "name": "VICNSW Current Qtr Value p. Unit", "type": "scatter", "x": [0, 1, 2], "xaxis": "x4", "y": [21.28836531333333, 23.961612886666664, 176.56338321333337], "yaxis": "y4"}, {"line": {"dash": "dash", "width": 2}, "name": "VICNSW Purchase VWAP ($)", "type": "scatter", "x": [0, 1, 2], "xaxis": "x4", "y": [8004.0, 8004.0, 8004.0], "yaxis": "y4"}, {"line": {"width": 2}, "name": "VICSA Current Qtr Value p. Unit", "type": "scatter", "x": [0, 1, 2], "xaxis": "x5", "y": [43.89478181818181, 112.48608860227273, 165.13082638636365], "yaxis": "y5"}, {"line": {"dash": "dash", "width": 2}, "name": "VICSA Purchase VWAP ($)", "type": "scatter", "x": [0, 1, 2], "xaxis": "x5", "y": [1763.2, 1763.2, 1763.2], "yaxis": "y5"}],
+                        {"annotations": [{"font": {"size": 16}, "showarrow": false, "text": "NSWQLD", "x": 0.5, "xanchor": "center", "xref": "paper", "y": 1.0, "yanchor": "bottom", "yref": "paper"}, {"font": {"size": 16}, "showarrow": false, "text": "NSWVIC", "x": 0.5, "xanchor": "center", "xref": "paper", "y": 0.78, "yanchor": "bottom", "yref": "paper"}, {"font": {"size": 16}, "showarrow": false, "text": "SAVIC", "x": 0.5, "xanchor": "center", "xref": "paper", "y": 0.56, "yanchor": "bottom", "yref": "paper"}, {"font": {"size": 16}, "showarrow": false, "text": "VICNSW", "x": 0.5, "xanchor": "center", "xref": "paper", "y": 0.33999999999999997, "yanchor": "bottom", "yref": "paper"}, {"font": {"size": 16}, "showarrow": false, "text": "VICSA", "x": 0.5, "xanchor": "center", "xref": "paper", "y": 0.12, "yanchor": "bottom", "yref": "paper"}], "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "xaxis": {"anchor": "y", "domain": [0.0, 1.0]}, "xaxis2": {"anchor": "y2", "domain": [0.0, 1.0]}, "xaxis3": {"anchor": "y3", "domain": [0.0, 1.0]}, "xaxis4": {"anchor": "y4", "domain": [0.0, 1.0]}, "xaxis5": {"anchor": "y5", "domain": [0.0, 1.0]}, "yaxis": {"anchor": "x", "domain": [0.88, 1.0]}, "yaxis2": {"anchor": "x2", "domain": [0.66, 0.78]}, "yaxis3": {"anchor": "x3", "domain": [0.44, 0.56]}, "yaxis4": {"anchor": "x4", "domain": [0.22, 0.33999999999999997]}, "yaxis5": {"anchor": "x5", "domain": [0.0, 0.12]}},
+                        {"responsive": true}
+                    )
+                };
+                
+            </script>
+        </div>
+
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Section-2---Next-Qtr">
+<a class="anchor" href="#Section-2---Next-Qtr" aria-hidden="true"><span class="octicon octicon-link"></span></a>Section 2 - Next Qtr<a class="anchor-link" href="#Section-2---Next-Qtr"> </a>
+</h1>
+<h2 id="2.1-Attunga-Holdings">
+<a class="anchor" href="#2.1-Attunga-Holdings" aria-hidden="true"><span class="octicon octicon-link"></span></a>2.1 Attunga Holdings<a class="anchor-link" href="#2.1-Attunga-Holdings"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>Year</th>
+      <th>Qtr</th>
+      <th>Current Holding</th>
+      <th>VWAP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NSWQLD</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>32</td>
+      <td>252.75</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NSWVIC</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>61</td>
+      <td>979.46</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SAVIC</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>22</td>
+      <td>5246.73</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>VICNSW</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>10</td>
+      <td>4500.00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VICSA</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>20</td>
+      <td>2058.75</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Tranche-Settlement-Prices">
+<a class="anchor" href="#Tranche-Settlement-Prices" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tranche Settlement Prices<a class="anchor-link" href="#Tranche-Settlement-Prices"> </a>
+</h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YEAR</th>
+      <th>QTR</th>
+      <th>TRANCHE</th>
+      <th>NSWQLD</th>
+      <th>QLDNSW</th>
+      <th>SAVIC</th>
+      <th>VICSA</th>
+      <th>NSWVIC</th>
+      <th>VICNSW</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>01</td>
+      <td>$502.00</td>
+      <td>$10,228.20</td>
+      <td>$9,568.80</td>
+      <td>$2,760.00</td>
+      <td>$2,208.00</td>
+      <td>$5,918.40</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>02</td>
+      <td>$800.00</td>
+      <td>$6,003.00</td>
+      <td>$6,315.41</td>
+      <td>$2,525.00</td>
+      <td>$1,975.00</td>
+      <td>$5,602.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>03</td>
+      <td>$800.00</td>
+      <td>$7,729.00</td>
+      <td>$6,315.41</td>
+      <td>$2,272.50</td>
+      <td>$1,656.00</td>
+      <td>$5,681.66</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>04</td>
+      <td>$800.00</td>
+      <td>$9,001.00</td>
+      <td>$9,967.00</td>
+      <td>$1,750.00</td>
+      <td>$1,650.00</td>
+      <td>$5,681.66</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>05</td>
+      <td>$800.00</td>
+      <td>$11,542.00</td>
+      <td>$9,967.00</td>
+      <td>$1,662.50</td>
+      <td>$1,650.00</td>
+      <td>$6,200.00</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>06</td>
+      <td>$245.00</td>
+      <td>$11,542.00</td>
+      <td>$10,005.00</td>
+      <td>$1,413.12</td>
+      <td>$1,656.00</td>
+      <td>$5,420.00</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>07</td>
+      <td>$200.00</td>
+      <td>$11,772.84</td>
+      <td>$10,205.10</td>
+      <td>$1,550.00</td>
+      <td>$993.60</td>
+      <td>$7,500.00</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>08</td>
+      <td>$312.00</td>
+      <td>$10,086.00</td>
+      <td>$3,571.78</td>
+      <td>$1,695.75</td>
+      <td>$1,032.00</td>
+      <td>$6,601.00</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>09</td>
+      <td>$252.00</td>
+      <td>$12,950.12</td>
+      <td>$4,504.00</td>
+      <td>$1,600.94</td>
+      <td>$1,304.00</td>
+      <td>$4,500.00</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>09</td>
+      <td>$523.44</td>
+      <td>$10,094.91</td>
+      <td>$7,824.39</td>
+      <td>$1,914.42</td>
+      <td>$1,569.40</td>
+      <td>$5,906.70</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>10</td>
+      <td>$254.00</td>
+      <td>$12,302.50</td>
+      <td>$5,250.00</td>
+      <td>$1,601.00</td>
+      <td>$1,389.00</td>
+      <td>$5,625.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Section-3---Historical-SRA-Data">
+<a class="anchor" href="#Section-3---Historical-SRA-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Section 3 - Historical SRA Data<a class="anchor-link" href="#Section-3---Historical-SRA-Data"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.1-Historical-Payouts">
+<a class="anchor" href="#3.1-Historical-Payouts" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.1 Historical Payouts<a class="anchor-link" href="#3.1-Historical-Payouts"> </a>
+</h2>
+<p>Note: Need to change both the qtr &amp; product dropdowns to get the chart to update</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+<div id="altair-viz-6df95ba7834d404892d3ab9d7b290b00"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-6df95ba7834d404892d3ab9d7b290b00") {
+      outputDiv = document.getElementById("altair-viz-6df95ba7834d404892d3ab9d7b290b00");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-49d15ee9375a4828991b88332e625e21"}, "mark": "line", "encoding": {"tooltip": {"type": "quantitative", "field": "Payout_per_Unit"}, "x": {"type": "quantitative", "field": "YEAR", "scale": {"zero": false}}, "y": {"type": "quantitative", "field": "Payout_per_Unit", "scale": {"zero": false}}}, "selection": {"Product": {"type": "single", "fields": ["LOCATION"], "bind": {"input": "select", "options": ["QLDNSW", "NSWQLD", "NSWVIC", "VICNSW", "VICSA", "SAVIC"]}}, "QTR": {"type": "single", "fields": ["QTR"], "bind": {"input": "select", "options": ["01", "02", "03", "04"]}}}, "transform": [{"filter": {"selection": "Product"}}, {"filter": {"selection": "QTR"}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-49d15ee9375a4828991b88332e625e21": [{"LOCATION": "NSWQLD", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$11,216,748.33", "Auction_Fees": "$1,776.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$11,214,971.83", "Auction_Proceeds": "$5,196,505.65", "Payout_Ratio": "215.8", "Negative_Residues": "-$10,257.71", "Payout_per_Unit": 20390.86}, {"LOCATION": "QLDNSW", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$3,167,150.78", "Auction_Fees": "$13,200.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,153,950.78", "Auction_Proceeds": "$2,563,215.00", "Payout_Ratio": "123", "Negative_Residues": "-$3,525,445.62", "Payout_per_Unit": 2628.29}, {"LOCATION": "SAVIC", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$3,516,154.87", "Auction_Fees": "$2,056.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,514,098.87", "Auction_Proceeds": "$642,027.50", "Payout_Ratio": "547.3", "Negative_Residues": "-$22,132.05", "Payout_per_Unit": 8785.25}, {"LOCATION": "VICSA", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$7,085,688.62", "Auction_Fees": "$12,411.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,073,277.62", "Auction_Proceeds": "$10,706,392.74", "Payout_Ratio": "66.1", "Negative_Residues": "-$57,732.13", "Payout_per_Unit": 10104.68}, {"LOCATION": "NSWVIC", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$115,103.15", "Auction_Fees": "$8,320.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$106,783.15", "Auction_Proceeds": "$1,845,523.36", "Payout_Ratio": "5.8", "Negative_Residues": "-$1,814.08", "Payout_per_Unit": 82.14}, {"LOCATION": "VICNSW", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$7,891,053.17", "Auction_Fees": "$13,590.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,877,463.17", "Auction_Proceeds": "$6,745,748.75", "Payout_Ratio": "116.8", "Negative_Residues": "-$5,827,548.03", "Payout_per_Unit": 5251.64}, {"LOCATION": "TOTAL", "YEAR": 2016, "QTR": "01", "Total_Surplus": "$32,991,898.91", "Auction_Fees": "$51,353.50", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$32,940,545.41", "Auction_Proceeds": "$27,699,413.00", "Payout_Ratio": "118.9", "Negative_Residues": "-$9,444,929.62", "Payout_per_Unit": 5830.19}, {"LOCATION": "NSWQLD", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$540,924.27", "Auction_Fees": "$528.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$540,396.27", "Auction_Proceeds": "$1,124,364.30", "Payout_Ratio": "48.1", "Negative_Residues": "-$5,713.46", "Payout_per_Unit": 982.54}, {"LOCATION": "QLDNSW", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$8,360,641.04", "Auction_Fees": "$22,116.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,338,525.04", "Auction_Proceeds": "$2,484,490.00", "Payout_Ratio": "335.6", "Negative_Residues": "-$27,271.35", "Payout_per_Unit": 6948.77}, {"LOCATION": "SAVIC", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$629,799.95", "Auction_Fees": "$3,820.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$625,979.95", "Auction_Proceeds": "$450,350.05", "Payout_Ratio": "139", "Negative_Residues": "-$297,518.80", "Payout_per_Unit": 1564.95}, {"LOCATION": "VICSA", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$10,865,240.91", "Auction_Fees": "$5,985.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$10,859,255.91", "Auction_Proceeds": "$13,661,228.00", "Payout_Ratio": "79.5", "Negative_Residues": "-$257,342.53", "Payout_per_Unit": 15513.22}, {"LOCATION": "NSWVIC", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$101,648.38", "Auction_Fees": "$2,509.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$99,139.38", "Auction_Proceeds": "$393,347.96", "Payout_Ratio": "25.2", "Negative_Residues": "-$63,250.10", "Payout_per_Unit": 76.26}, {"LOCATION": "VICNSW", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$19,508,424.37", "Auction_Fees": "$16,395.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,492,029.37", "Auction_Proceeds": "$7,039,316.25", "Payout_Ratio": "276.9", "Negative_Residues": "-$44,278.39", "Payout_per_Unit": 12994.69}, {"LOCATION": "TOTAL", "YEAR": 2016, "QTR": "02", "Total_Surplus": "$40,006,678.92", "Auction_Fees": "$51,353.00", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$39,955,325.92", "Auction_Proceeds": "$25,153,096.56", "Payout_Ratio": "158.8", "Negative_Residues": "-$695,374.63", "Payout_per_Unit": 7071.74}, {"LOCATION": "NSWQLD", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$409,956.32", "Auction_Fees": "$775.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$409,180.82", "Auction_Proceeds": "$1,254,938.20", "Payout_Ratio": "32.6", "Negative_Residues": "-$2,183.21", "Payout_per_Unit": 743.97}, {"LOCATION": "QLDNSW", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$4,468,541.94", "Auction_Fees": "$30,468.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,438,073.94", "Auction_Proceeds": "$2,223,549.00", "Payout_Ratio": "199.6", "Negative_Residues": "-$139,966.21", "Payout_per_Unit": 3698.39}, {"LOCATION": "SAVIC", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$320,981.65", "Auction_Fees": "$4,644.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$316,337.65", "Auction_Proceeds": "$347,545.33", "Payout_Ratio": "91", "Negative_Residues": "-$1,025,121.48", "Payout_per_Unit": 790.84}, {"LOCATION": "VICSA", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$30,071,275.33", "Auction_Fees": "$11,529.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$30,059,746.33", "Auction_Proceeds": "$16,329,565.60", "Payout_Ratio": "184.1", "Negative_Residues": "-$223,683.16", "Payout_per_Unit": 42942.49}, {"LOCATION": "NSWVIC", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$655,770.65", "Auction_Fees": "$2,912.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$652,858.65", "Auction_Proceeds": "$476,703.00", "Payout_Ratio": "137", "Negative_Residues": "-$24,004.95", "Payout_per_Unit": 502.2}, {"LOCATION": "VICNSW", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$8,362,352.93", "Auction_Fees": "$22,380.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,339,972.93", "Auction_Proceeds": "$6,670,586.25", "Payout_Ratio": "125", "Negative_Residues": "-$298,332.47", "Payout_per_Unit": 5559.98}, {"LOCATION": "TOTAL", "YEAR": 2016, "QTR": "03", "Total_Surplus": "$44,288,878.81", "Auction_Fees": "$72,708.50", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$44,216,170.31", "Auction_Proceeds": "$27,302,887.38", "Payout_Ratio": "161.9", "Negative_Residues": "-$1,713,291.47", "Payout_per_Unit": 7825.87}, {"LOCATION": "NSWQLD", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$2,073,883.82", "Auction_Fees": "$2,563.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,071,320.82", "Auction_Proceeds": "$3,283,509.05", "Payout_Ratio": "63.1", "Negative_Residues": "-$5,374.68", "Payout_per_Unit": 3766.04}, {"LOCATION": "QLDNSW", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$13,623,339.20", "Auction_Fees": "$22,836.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$13,600,503.20", "Auction_Proceeds": "$3,629,485.00", "Payout_Ratio": "374.7", "Negative_Residues": "-$658,113.87", "Payout_per_Unit": 11333.75}, {"LOCATION": "SAVIC", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$621,386.00", "Auction_Fees": "$3,476.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$617,910.00", "Auction_Proceeds": "$381,658.43", "Payout_Ratio": "161.9", "Negative_Residues": "-$828,372.39", "Payout_per_Unit": 1544.78}, {"LOCATION": "VICSA", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$28,496,182.33", "Auction_Fees": "$14,581.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$28,481,601.33", "Auction_Proceeds": "$14,639,296.90", "Payout_Ratio": "194.6", "Negative_Residues": "-$266,111.43", "Payout_per_Unit": 40688.0}, {"LOCATION": "NSWVIC", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$2,127.78", "Auction_Fees": "$2,127.78", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$13,000.00", "Residue_Distributed": "$0.00", "Auction_Proceeds": "$718,739.80", "Payout_Ratio": "0", "Negative_Residues": "-$480,844.05", "Payout_per_Unit": 0.0}, {"LOCATION": "VICNSW", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$46,306,447.21", "Auction_Fees": "$25,770.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$46,280,677.21", "Auction_Proceeds": "$8,984,053.75", "Payout_Ratio": "515.1", "Negative_Residues": "-$2,445.74", "Payout_per_Unit": 30853.78}, {"LOCATION": "TOTAL", "YEAR": 2016, "QTR": "04", "Total_Surplus": "$91,123,366.33", "Auction_Fees": "$71,353.78", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$13,000.00", "Residue_Distributed": "$91,052,012.55", "Auction_Proceeds": "$31,636,742.93", "Payout_Ratio": "287.8", "Negative_Residues": "-$2,241,262.16", "Payout_per_Unit": 16115.4}, {"LOCATION": "NSWQLD", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$10,230,481.29", "Auction_Fees": "$4,482.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$10,225,998.79", "Auction_Proceeds": "$8,090,485.65", "Payout_Ratio": "126.4", "Negative_Residues": "-$18,025.84", "Payout_per_Unit": 18592.73}, {"LOCATION": "QLDNSW", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$22,781,080.04", "Auction_Fees": "$17,076.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$22,764,004.04", "Auction_Proceeds": "$2,667,103.00", "Payout_Ratio": "853.5", "Negative_Residues": "-$15,688,110.92", "Payout_per_Unit": 18970.0}, {"LOCATION": "SAVIC", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$594,083.16", "Auction_Fees": "$2,896.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$591,187.16", "Auction_Proceeds": "$458,724.74", "Payout_Ratio": "128.9", "Negative_Residues": "-$127,343.19", "Payout_per_Unit": 1477.97}, {"LOCATION": "VICSA", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$52,875,998.08", "Auction_Fees": "$20,965.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$52,855,033.08", "Auction_Proceeds": "$25,243,193.78", "Payout_Ratio": "209.4", "Negative_Residues": "-$1,193,989.79", "Payout_per_Unit": 75507.19}, {"LOCATION": "NSWVIC", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$675,231.14", "Auction_Fees": "$9,477.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$665,754.14", "Auction_Proceeds": "$2,012,925.56", "Payout_Ratio": "33.1", "Negative_Residues": "-$29,092.58", "Payout_per_Unit": 512.12}, {"LOCATION": "VICNSW", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$44,258,848.77", "Auction_Fees": "$17,805.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$44,241,043.77", "Auction_Proceeds": "$8,134,165.00", "Payout_Ratio": "543.9", "Negative_Residues": "-$169,207.26", "Payout_per_Unit": 29494.03}, {"LOCATION": "TOTAL", "YEAR": 2017, "QTR": "01", "Total_Surplus": "$131,415,722.48", "Auction_Fees": "$72,701.50", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$131,343,020.98", "Auction_Proceeds": "$46,606,597.73", "Payout_Ratio": "281.8", "Negative_Residues": "-$17,225,769.57", "Payout_per_Unit": 23246.55}, {"LOCATION": "NSWQLD", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$1,508.48", "Auction_Fees": "$1,138.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$5,130.02", "Residue_Distributed": "$369.98", "Auction_Proceeds": "$1,667,657.55", "Payout_Ratio": "0", "Negative_Residues": "-$245.91", "Payout_per_Unit": 0.67}, {"LOCATION": "QLDNSW", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$11,731,866.39", "Auction_Fees": "$23,268.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$11,708,598.39", "Auction_Proceeds": "$3,665,989.00", "Payout_Ratio": "319.4", "Negative_Residues": "-$36,250.43", "Payout_per_Unit": 9757.17}, {"LOCATION": "SAVIC", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$624,396.89", "Auction_Fees": "$3,748.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$620,648.89", "Auction_Proceeds": "$511,685.85", "Payout_Ratio": "121.3", "Negative_Residues": "-$24,633.98", "Payout_per_Unit": 1551.62}, {"LOCATION": "VICSA", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$6,973,022.27", "Auction_Fees": "$22,834.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,950,188.27", "Auction_Proceeds": "$22,487,472.52", "Payout_Ratio": "30.9", "Negative_Residues": "-$17,393.61", "Payout_per_Unit": 9928.84}, {"LOCATION": "NSWVIC", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$6,048,674.65", "Auction_Fees": "$2,535.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,046,139.65", "Auction_Proceeds": "$1,098,136.92", "Payout_Ratio": "550.6", "Negative_Residues": "-$8,597.45", "Payout_per_Unit": 4650.88}, {"LOCATION": "VICNSW", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$1,698,412.73", "Auction_Fees": "$19,185.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,679,227.73", "Auction_Proceeds": "$7,785,412.50", "Payout_Ratio": "21.6", "Negative_Residues": "-$204,656.30", "Payout_per_Unit": 1119.49}, {"LOCATION": "TOTAL", "YEAR": 2017, "QTR": "02", "Total_Surplus": "$27,077,881.41", "Auction_Fees": "$72,708.50", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$5,130.02", "Residue_Distributed": "$27,005,172.91", "Auction_Proceeds": "$37,216,354.34", "Payout_Ratio": "72.6", "Negative_Residues": "-$291,777.68", "Payout_per_Unit": 4779.68}, {"LOCATION": "NSWQLD", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$231,171.26", "Auction_Fees": "$1,402.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$229,768.76", "Auction_Proceeds": "$1,403,471.40", "Payout_Ratio": "16.4", "Negative_Residues": "-$435.93", "Payout_per_Unit": 464.18}, {"LOCATION": "QLDNSW", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$21,881,878.25", "Auction_Fees": "$21,612.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$21,860,266.25", "Auction_Proceeds": "$5,767,549.00", "Payout_Ratio": "379", "Negative_Residues": "-$1,382.15", "Payout_per_Unit": 19872.97}, {"LOCATION": "SAVIC", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$5,270,627.58", "Auction_Fees": "$3,440.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,267,187.58", "Auction_Proceeds": "$575,931.66", "Payout_Ratio": "914.6", "Negative_Residues": "-$238,379.33", "Payout_per_Unit": 7481.8}, {"LOCATION": "VICSA", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$1,161,951.49", "Auction_Fees": "$23,667.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,138,284.49", "Auction_Proceeds": "$22,507,579.90", "Payout_Ratio": "5.1", "Negative_Residues": "-$2,031.58", "Payout_per_Unit": 1417.54}, {"LOCATION": "NSWVIC", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$2,967,889.20", "Auction_Fees": "$2,314.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,965,575.20", "Auction_Proceeds": "$1,627,974.84", "Payout_Ratio": "182.2", "Negative_Residues": "-$18,416.61", "Payout_per_Unit": 2496.28}, {"LOCATION": "VICNSW", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$7,548,836.37", "Auction_Fees": "$21,315.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,527,521.37", "Auction_Proceeds": "$7,824,430.00", "Payout_Ratio": "96.2", "Negative_Residues": "-$135,578.11", "Payout_per_Unit": 5474.56}, {"LOCATION": "TOTAL", "YEAR": 2017, "QTR": "03", "Total_Surplus": "$39,062,354.16", "Auction_Fees": "$73,750.50", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$38,988,603.66", "Auction_Proceeds": "$39,706,936.80", "Payout_Ratio": "98.2", "Negative_Residues": "-$396,223.71", "Payout_per_Unit": 6882.37}, {"LOCATION": "NSWQLD", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$1,365,721.04", "Auction_Fees": "$2,827.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,362,894.04", "Auction_Proceeds": "$3,961,908.40", "Payout_Ratio": "34.4", "Negative_Residues": "-$4,192.11", "Payout_per_Unit": 2477.99}, {"LOCATION": "QLDNSW", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$13,628,856.26", "Auction_Fees": "$12,420.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$13,616,436.26", "Auction_Proceeds": "$6,094,518.00", "Payout_Ratio": "223.4", "Negative_Residues": "-$9,146.49", "Payout_per_Unit": 11347.03}, {"LOCATION": "SAVIC", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$4,751,850.87", "Auction_Fees": "$2,102.10", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,749,748.77", "Auction_Proceeds": "$1,656,747.60", "Payout_Ratio": "286.7", "Negative_Residues": "-$287,457.91", "Payout_per_Unit": 6168.5}, {"LOCATION": "VICSA", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$405,533.88", "Auction_Fees": "$14,880.80", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$390,653.08", "Auction_Proceeds": "$19,847,506.14", "Payout_Ratio": "2", "Negative_Residues": "-$3,779.25", "Payout_per_Unit": 443.92}, {"LOCATION": "NSWVIC", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$6,245,118.18", "Auction_Fees": "$2,197.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,242,921.18", "Auction_Proceeds": "$2,294,218.68", "Payout_Ratio": "272.1", "Negative_Residues": "-$38,463.52", "Payout_per_Unit": 4802.25}, {"LOCATION": "VICNSW", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$6,096,885.64", "Auction_Fees": "$16,455.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,080,430.64", "Auction_Proceeds": "$9,725,322.50", "Payout_Ratio": "62.5", "Negative_Residues": "-$21,414.62", "Payout_per_Unit": 4053.62}, {"LOCATION": "TOTAL", "YEAR": 2017, "QTR": "04", "Total_Surplus": "$32,493,965.87", "Auction_Fees": "$50,881.90", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$32,443,083.97", "Auction_Proceeds": "$43,580,221.32", "Payout_Ratio": "74.4", "Negative_Residues": "-$364,453.91", "Payout_per_Unit": 5232.76}, {"LOCATION": "NSWQLD", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$1,090,919.56", "Auction_Fees": "$5,412.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,085,507.56", "Auction_Proceeds": "$8,723,919.90", "Payout_Ratio": "12.4", "Negative_Residues": "-$7,429.53", "Payout_per_Unit": 1973.65}, {"LOCATION": "QLDNSW", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$5,705,148.81", "Auction_Fees": "$10,116.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,695,032.81", "Auction_Proceeds": "$8,379,472.00", "Payout_Ratio": "68", "Negative_Residues": "-$6,255.28", "Payout_per_Unit": 4745.86}, {"LOCATION": "SAVIC", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$1,589,962.48", "Auction_Fees": "$1,432.20", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,588,530.28", "Auction_Proceeds": "$2,130,500.52", "Payout_Ratio": "74.6", "Negative_Residues": "-$88,214.23", "Payout_per_Unit": 2063.03}, {"LOCATION": "VICSA", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$7,438,917.08", "Auction_Fees": "$17,256.80", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,421,660.28", "Auction_Proceeds": "$29,226,511.36", "Payout_Ratio": "25.4", "Negative_Residues": "-$9,500.66", "Payout_per_Unit": 8433.7}, {"LOCATION": "NSWVIC", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$18,642,001.30", "Auction_Fees": "$4,199.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$18,637,802.30", "Auction_Proceeds": "$4,546,237.80", "Payout_Ratio": "410", "Negative_Residues": "-$32,526.40", "Payout_per_Unit": 14336.77}, {"LOCATION": "VICNSW", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$1,415,439.83", "Auction_Fees": "$12,465.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,402,974.83", "Auction_Proceeds": "$9,245,892.50", "Payout_Ratio": "15.2", "Negative_Residues": "-$80,997.71", "Payout_per_Unit": 935.32}, {"LOCATION": "TOTAL", "YEAR": 2018, "QTR": "01", "Total_Surplus": "$35,882,389.06", "Auction_Fees": "$50,881.00", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$35,831,508.06", "Auction_Proceeds": "$62,252,534.08", "Payout_Ratio": "57.6", "Negative_Residues": "-$224,923.80", "Payout_per_Unit": 5779.28}, {"LOCATION": "NSWQLD", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$7,082.40", "Auction_Fees": "$1,545.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,536.90", "Auction_Proceeds": "$1,280,466.95", "Payout_Ratio": "0.4", "Negative_Residues": "-$1,353.38", "Payout_per_Unit": 10.07}, {"LOCATION": "QLDNSW", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$20,949,261.35", "Auction_Fees": "$9,504.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$20,939,757.35", "Auction_Proceeds": "$11,802,467.00", "Payout_Ratio": "177.4", "Negative_Residues": "-$19,617.30", "Payout_per_Unit": 17449.8}, {"LOCATION": "SAVIC", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$698,377.09", "Auction_Fees": "$1,609.30", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$696,767.79", "Auction_Proceeds": "$1,892,400.12", "Payout_Ratio": "36.8", "Negative_Residues": "-$804,123.27", "Payout_per_Unit": 904.89}, {"LOCATION": "VICSA", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$6,889,488.23", "Auction_Fees": "$22,545.60", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,866,942.63", "Auction_Proceeds": "$23,699,923.96", "Payout_Ratio": "29", "Negative_Residues": "-$4,662.93", "Payout_per_Unit": 7803.34}, {"LOCATION": "NSWVIC", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$2,081,744.21", "Auction_Fees": "$1,248.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,080,496.21", "Auction_Proceeds": "$2,484,552.84", "Payout_Ratio": "83.7", "Negative_Residues": "-$206,822.67", "Payout_per_Unit": 1600.38}, {"LOCATION": "VICNSW", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$8,381,337.00", "Auction_Fees": "$14,430.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,366,907.00", "Auction_Proceeds": "$8,272,535.00", "Payout_Ratio": "101.1", "Negative_Residues": "-$47,864.59", "Payout_per_Unit": 5577.94}, {"LOCATION": "TOTAL", "YEAR": 2018, "QTR": "02", "Total_Surplus": "$39,007,290.28", "Auction_Fees": "$50,882.40", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$38,956,407.88", "Auction_Proceeds": "$49,432,345.87", "Payout_Ratio": "78.8", "Negative_Residues": "-$1,084,444.13", "Payout_per_Unit": 6283.29}, {"LOCATION": "NSWQLD", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$3,760.58", "Auction_Fees": "$2,816.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$4,555.42", "Residue_Distributed": "$944.58", "Auction_Proceeds": "$1,004,515.80", "Payout_Ratio": "0.1", "Negative_Residues": "-$1,911.43", "Payout_per_Unit": 1.72}, {"LOCATION": "QLDNSW", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$11,564,521.92", "Auction_Fees": "$12,384.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$11,552,137.92", "Auction_Proceeds": "$11,498,165.00", "Payout_Ratio": "100.5", "Negative_Residues": "-$18,221.22", "Payout_per_Unit": 9626.78}, {"LOCATION": "SAVIC", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$4,581,029.13", "Auction_Fees": "$1,925.00", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,579,104.13", "Auction_Proceeds": "$2,343,190.16", "Payout_Ratio": "195.4", "Negative_Residues": "-$1,559,148.32", "Payout_per_Unit": 5946.89}, {"LOCATION": "VICSA", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$2,315,373.46", "Auction_Fees": "$33,237.60", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,282,135.86", "Auction_Proceeds": "$21,223,016.39", "Payout_Ratio": "10.8", "Negative_Residues": "-$26,472.82", "Payout_per_Unit": 2593.34}, {"LOCATION": "NSWVIC", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$825,767.36", "Auction_Fees": "$1,573.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$824,194.36", "Auction_Proceeds": "$2,989,270.40", "Payout_Ratio": "27.6", "Negative_Residues": "-$25,922.68", "Payout_per_Unit": 634.0}, {"LOCATION": "VICNSW", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$19,999,218.07", "Auction_Fees": "$21,810.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,977,408.07", "Auction_Proceeds": "$7,502,567.50", "Payout_Ratio": "266.3", "Negative_Residues": "-$62,398.08", "Payout_per_Unit": 13318.27}, {"LOCATION": "TOTAL", "YEAR": 2018, "QTR": "03", "Total_Surplus": "$39,289,670.51", "Auction_Fees": "$73,745.60", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$4,555.42", "Residue_Distributed": "$39,215,924.91", "Auction_Proceeds": "$46,560,725.25", "Payout_Ratio": "84.2", "Negative_Residues": "-$1,694,074.55", "Payout_per_Unit": 6325.15}, {"LOCATION": "NSWQLD", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$793,227.33", "Auction_Fees": "$25,327.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$767,899.83", "Auction_Proceeds": "$3,005,927.40", "Payout_Ratio": "25.5", "Negative_Residues": "-$28,491.56", "Payout_per_Unit": 1396.18}, {"LOCATION": "QLDNSW", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$8,019,338.98", "Auction_Fees": "$25,812.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,993,526.98", "Auction_Proceeds": "$8,946,759.00", "Payout_Ratio": "89.3", "Negative_Residues": "-$535,793.23", "Payout_per_Unit": 6661.27}, {"LOCATION": "SAVIC", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$2,387,460.97", "Auction_Fees": "$5,790.40", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,381,670.57", "Auction_Proceeds": "$2,722,097.76", "Payout_Ratio": "87.5", "Negative_Residues": "-$92,927.22", "Payout_per_Unit": 3093.08}, {"LOCATION": "VICSA", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$1,830,942.76", "Auction_Fees": "$79,173.60", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,751,769.16", "Auction_Proceeds": "$15,624,751.46", "Payout_Ratio": "11.2", "Negative_Residues": "-$4,308.59", "Payout_per_Unit": 1990.65}, {"LOCATION": "NSWVIC", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$6,636,861.65", "Auction_Fees": "$8,931.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,627,930.65", "Auction_Proceeds": "$3,098,203.32", "Payout_Ratio": "213.9", "Negative_Residues": "-$22,121.26", "Payout_per_Unit": 5098.41}, {"LOCATION": "VICNSW", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$5,010,520.01", "Auction_Fees": "$75,405.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,935,115.01", "Auction_Proceeds": "$8,388,721.25", "Payout_Ratio": "58.8", "Negative_Residues": "-$245,094.75", "Payout_per_Unit": 3290.08}, {"LOCATION": "TOTAL", "YEAR": 2018, "QTR": "04", "Total_Surplus": "$24,678,351.70", "Auction_Fees": "$220,439.50", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$24,457,912.20", "Auction_Proceeds": "$41,786,460.19", "Payout_Ratio": "", "Negative_Residues": "-$928,736.62", "Payout_per_Unit": 3944.82}, {"LOCATION": "NSWQLD", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$179,295.28", "Auction_Fees": "$41,360.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$137,935.28", "Auction_Proceeds": "$6,262,287.55", "Payout_Ratio": "2.2", "Negative_Residues": "-$30,879.97", "Payout_per_Unit": 250.79}, {"LOCATION": "QLDNSW", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$21,664,060.20", "Auction_Fees": "$20,400.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$21,643,660.20", "Auction_Proceeds": "$12,010,378.00", "Payout_Ratio": "180.2", "Negative_Residues": "-$7,765.28", "Payout_per_Unit": 18036.38}, {"LOCATION": "SAVIC", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$4,492,168.40", "Auction_Fees": "$5,112.80", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,487,055.60", "Auction_Proceeds": "$3,526,134.40", "Payout_Ratio": "127.3", "Negative_Residues": "-$262,239.61", "Payout_per_Unit": 5827.34}, {"LOCATION": "VICSA", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$2,419,143.07", "Auction_Fees": "$85,210.40", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,333,932.67", "Auction_Proceeds": "$19,900,712.01", "Payout_Ratio": "11.7", "Negative_Residues": "-$31,750.06", "Payout_per_Unit": 2652.2}, {"LOCATION": "NSWVIC", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$19,556,465.11", "Auction_Fees": "$14,690.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,541,775.11", "Auction_Proceeds": "$5,831,230.04", "Payout_Ratio": "335.1", "Negative_Residues": "-$574,298.94", "Payout_per_Unit": 15032.13}, {"LOCATION": "VICNSW", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$5,254,195.15", "Auction_Fees": "$53,685.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,200,510.15", "Auction_Proceeds": "$8,360,591.25", "Payout_Ratio": "62.2", "Negative_Residues": "-$1,685,637.91", "Payout_per_Unit": 3467.01}, {"LOCATION": "TOTAL", "YEAR": 2019, "QTR": "01", "Total_Surplus": "$53,565,327.20", "Auction_Fees": "$220,458.20", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$53,344,869.00", "Auction_Proceeds": "$55,891,333.25", "Payout_Ratio": "", "Negative_Residues": "-$2,592,571.76", "Payout_per_Unit": 8604.01}, {"LOCATION": "NSWQLD", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$33,950.30", "Auction_Fees": "$9,856.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$24,094.30", "Auction_Proceeds": "$1,015,441.60", "Payout_Ratio": "2.4", "Negative_Residues": "-$6,575.00", "Payout_per_Unit": 43.81}, {"LOCATION": "QLDNSW", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$9,411,741.69", "Auction_Fees": "$21,780.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$9,389,961.69", "Auction_Proceeds": "$12,892,134.00", "Payout_Ratio": "72.8", "Negative_Residues": "-$583,999.92", "Payout_per_Unit": 7824.97}, {"LOCATION": "SAVIC", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$4,440,998.75", "Auction_Fees": "$3,950.10", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,437,048.65", "Auction_Proceeds": "$2,784,696.96", "Payout_Ratio": "159.3", "Negative_Residues": "-$105,799.55", "Payout_per_Unit": 5762.4}, {"LOCATION": "VICSA", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$588,055.38", "Auction_Fees": "$119,732.80", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$468,322.58", "Auction_Proceeds": "$13,710,893.07", "Payout_Ratio": "3.4", "Negative_Residues": "-$4,465.25", "Payout_per_Unit": 532.18}, {"LOCATION": "NSWVIC", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$5,529,730.86", "Auction_Fees": "$3,445.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,526,285.86", "Auction_Proceeds": "$3,427,242.00", "Payout_Ratio": "161.2", "Negative_Residues": "-$22,276.07", "Payout_per_Unit": 4250.99}, {"LOCATION": "VICNSW", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$3,150,338.93", "Auction_Fees": "$61,695.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,088,643.93", "Auction_Proceeds": "$6,637,066.25", "Payout_Ratio": "46.5", "Negative_Residues": "-$579,662.86", "Payout_per_Unit": 2059.1}, {"LOCATION": "TOTAL", "YEAR": 2019, "QTR": "02", "Total_Surplus": "$23,154,815.90", "Auction_Fees": "$220,458.90", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$22,934,357.00", "Auction_Proceeds": "$40,467,473.88", "Payout_Ratio": "", "Negative_Residues": "-$1,302,778.65", "Payout_per_Unit": 3699.09}, {"LOCATION": "NSWQLD", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$41,225.29", "Auction_Fees": "$8,255.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$32,969.79", "Auction_Proceeds": "$732,498.75", "Payout_Ratio": "4.5", "Negative_Residues": "-$69,731.79", "Payout_per_Unit": 59.95}, {"LOCATION": "QLDNSW", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$37,778,016.15", "Auction_Fees": "$14,628.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$37,763,388.15", "Auction_Proceeds": "$14,413,989.00", "Payout_Ratio": "262", "Negative_Residues": "-$2,083,084.40", "Payout_per_Unit": 31469.49}, {"LOCATION": "SAVIC", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$12,859,988.73", "Auction_Fees": "$2,286.90", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$12,857,701.83", "Auction_Proceeds": "$3,893,958.94", "Payout_Ratio": "330.2", "Negative_Residues": "-$150,908.99", "Payout_per_Unit": 16698.31}, {"LOCATION": "VICSA", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$363,460.13", "Auction_Fees": "$107,412.80", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$256,047.33", "Auction_Proceeds": "$11,168,178.87", "Payout_Ratio": "2.3", "Negative_Residues": "-$94,296.11", "Payout_per_Unit": 290.96}, {"LOCATION": "NSWVIC", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$6,877,482.53", "Auction_Fees": "$3,133.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,874,349.53", "Auction_Proceeds": "$3,879,499.32", "Payout_Ratio": "177.2", "Negative_Residues": "-$17,601.24", "Payout_per_Unit": 5287.96}, {"LOCATION": "VICNSW", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$3,379,706.51", "Auction_Fees": "$43,875.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,335,831.51", "Auction_Proceeds": "$6,797,532.50", "Payout_Ratio": "49.1", "Negative_Residues": "-$741,646.83", "Payout_per_Unit": 2223.89}, {"LOCATION": "TOTAL", "YEAR": 2019, "QTR": "03", "Total_Surplus": "$61,299,879.35", "Auction_Fees": "$179,591.20", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$61,120,288.15", "Auction_Proceeds": "$40,885,657.38", "Payout_Ratio": "", "Negative_Residues": "-$3,157,269.36", "Payout_per_Unit": 9858.11}, {"LOCATION": "NSWQLD", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$739,260.04", "Auction_Fees": "$17,842.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$721,418.04", "Auction_Proceeds": "$1,643,529.71", "Payout_Ratio": "43.9", "Negative_Residues": "-$12,919.97", "Payout_per_Unit": 1311.67}, {"LOCATION": "QLDNSW", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$19,364,128.84", "Auction_Fees": "$19,716.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,344,412.84", "Auction_Proceeds": "$11,702,678.00", "Payout_Ratio": "165.3", "Negative_Residues": "-$98,609.59", "Payout_per_Unit": 15973.92}, {"LOCATION": "SAVIC", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$12,667,734.96", "Auction_Fees": "$2,071.30", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$12,665,663.66", "Auction_Proceeds": "$4,002,255.31", "Payout_Ratio": "316.5", "Negative_Residues": "-$349,814.30", "Payout_per_Unit": 16448.91}, {"LOCATION": "VICSA", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$11,806,003.50", "Auction_Fees": "$79,534.40", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$11,726,469.10", "Auction_Proceeds": "$7,457,906.87", "Payout_Ratio": "157.2", "Negative_Residues": "-$118,083.61", "Payout_per_Unit": 13310.41}, {"LOCATION": "NSWVIC", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$3,793,534.20", "Auction_Fees": "$3,900.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,789,634.20", "Auction_Proceeds": "$4,362,322.25", "Payout_Ratio": "86.9", "Negative_Residues": "-$7,304.43", "Payout_per_Unit": 2857.94}, {"LOCATION": "VICNSW", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$7,277,599.82", "Auction_Fees": "$48,810.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,228,789.82", "Auction_Proceeds": "$7,437,240.00", "Payout_Ratio": "97.2", "Negative_Residues": "-$2,308,554.66", "Payout_per_Unit": 4819.19}, {"LOCATION": "TOTAL", "YEAR": 2019, "QTR": "04", "Total_Surplus": "$55,648,261.37", "Auction_Fees": "$171,873.70", "Guaranteed_Minimum": "$62,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$55,476,387.67", "Auction_Proceeds": "$36,605,932.13", "Payout_Ratio": "151.6", "Negative_Residues": "-$2,895,286.55", "Payout_per_Unit": 8893.3}, {"LOCATION": "NSWQLD", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$639,013.09", "Auction_Fees": "$29,859.50", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$609,153.59", "Auction_Proceeds": "$3,044,561.21", "Payout_Ratio": "20.0", "Negative_Residues": "-$5,282.79", "Payout_per_Unit": 1107.55}, {"LOCATION": "QLDNSW", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$83,072,595.77", "Auction_Fees": "$10,020.40", "Guaranteed_Minimum": "$12,110.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$83,062,513.77", "Auction_Proceeds": "$14,668,783.46", "Payout_Ratio": "560.8", "Negative_Residues": "-$64,432.37", "Payout_per_Unit": 69218.76}, {"LOCATION": "SAVIC", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$10,878,660.14", "Auction_Fees": "$1,694.00", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$10,876,966.14", "Auction_Proceeds": "$4,680,875.56", "Payout_Ratio": "232.4", "Negative_Residues": "-$740,727.17", "Payout_per_Unit": 14125.93}, {"LOCATION": "VICSA", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$6,012,017.45", "Auction_Fees": "$93,368.52", "Guaranteed_Minimum": "$8,810.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,918,525.01", "Auction_Proceeds": "$9,428,792.38", "Payout_Ratio": "62.7", "Negative_Residues": "-$100,916.51", "Payout_per_Unit": 6725.6}, {"LOCATION": "NSWVIC", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$8,016,754.23", "Auction_Fees": "$7,719.92", "Guaranteed_Minimum": "$13,260.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,008,940.71", "Auction_Proceeds": "$8,478,537.93", "Payout_Ratio": "91.5", "Negative_Residues": "-$1,689,852.63", "Payout_per_Unit": 6160.72}, {"LOCATION": "VICNSW", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$19,449,727.19", "Auction_Fees": "$30,015.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,419,712.19", "Auction_Proceeds": "$7,791,832.50", "Payout_Ratio": "249.2", "Negative_Residues": "-$631,110.98", "Payout_per_Unit": 12946.47}, {"LOCATION": "TOTAL", "YEAR": 2020, "QTR": "01", "Total_Surplus": "$128,068,767.86", "Auction_Fees": "$172,677.34", "Guaranteed_Minimum": "$62,380.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$127,895,811.40", "Auction_Proceeds": "$48,093,383.03", "Payout_Ratio": "263.6", "Negative_Residues": "-$3,232,322.45", "Payout_per_Unit": 20628.36}, {"LOCATION": "NSWQLD", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$18,449.40", "Auction_Fees": "$7,711.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$10,738.40", "Auction_Proceeds": "$372,554.88", "Payout_Ratio": "2.9", "Negative_Residues": "-$937.53", "Payout_per_Unit": 19.52}, {"LOCATION": "QLDNSW", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$11,481,605.32", "Auction_Fees": "$17,295.12", "Guaranteed_Minimum": "$12,120.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$11,464,186.24", "Auction_Proceeds": "$15,349,675.99", "Payout_Ratio": "73.9", "Negative_Residues": "-$287,133.28", "Payout_per_Unit": 9553.49}, {"LOCATION": "SAVIC", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$2,080,182.14", "Auction_Fees": "$2,363.90", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,077,818.24", "Auction_Proceeds": "$4,503,049.83", "Payout_Ratio": "46.1", "Negative_Residues": "-$73,760.22", "Payout_per_Unit": 2698.47}, {"LOCATION": "VICSA", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$1,805,758.01", "Auction_Fees": "$103,998.40", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$1,701,759.61", "Auction_Proceeds": "$3,016,551.27", "Payout_Ratio": "56.4", "Negative_Residues": "-$18,792.49", "Payout_per_Unit": 1933.82}, {"LOCATION": "NSWVIC", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$606,041.91", "Auction_Fees": "$5,239.40", "Guaranteed_Minimum": "$13,200.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$600,749.71", "Auction_Proceeds": "$3,437,336.10", "Payout_Ratio": "17.3", "Negative_Residues": "-$9,248.00", "Payout_per_Unit": 462.12}, {"LOCATION": "VICNSW", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$7,233,647.00", "Auction_Fees": "$37,440.00", "Guaranteed_Minimum": "$15,300.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$7,195,785.50", "Auction_Proceeds": "$6,349,669.58", "Payout_Ratio": "110.3", "Negative_Residues": "-$41,374.40", "Payout_per_Unit": 4797.19}, {"LOCATION": "TOTAL", "YEAR": 2020, "QTR": "02", "Total_Surplus": "$23,225,683.78", "Auction_Fees": "$174,047.82", "Guaranteed_Minimum": "$62,620.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$23,051,037.70", "Auction_Proceeds": "$33,028,837.64", "Payout_Ratio": "69.0", "Negative_Residues": "-$431,245.93", "Payout_per_Unit": null}, {"LOCATION": "NSWQLD", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$421,008.39", "Auction_Fees": "$1,298.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$419,710.39", "Auction_Proceeds": "$2,231,385.65", "Payout_Ratio": "18.8", "Negative_Residues": "-$1,813.24", "Payout_per_Unit": 763.11}, {"LOCATION": "QLDNSW", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$3,491,539.62", "Auction_Fees": "$17,700.00", "Guaranteed_Minimum": "$12,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,473,839.62", "Auction_Proceeds": "$2,274,543.00", "Payout_Ratio": "152.7", "Negative_Residues": "-$16,338.47", "Payout_per_Unit": 2894.87}, {"LOCATION": "SAVIC", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$896,559.42", "Auction_Fees": "$2,580.00", "Guaranteed_Minimum": "$4,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$893,979.42", "Auction_Proceeds": "$510,282.42", "Payout_Ratio": "175.2", "Negative_Residues": "-$145,851.65", "Payout_per_Unit": 2234.95}, {"LOCATION": "VICSA", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$6,790,803.18", "Auction_Fees": "$10,045.00", "Guaranteed_Minimum": "$7,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$6,780,758.18", "Auction_Proceeds": "$6,975,895.88", "Payout_Ratio": "97.2", "Negative_Residues": "-$29,449.80", "Payout_per_Unit": 9686.8}, {"LOCATION": "NSWVIC", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$2,117,991.74", "Auction_Fees": "$2,821.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$2,115,170.74", "Auction_Proceeds": "$787,198.44", "Payout_Ratio": "268.7", "Negative_Residues": "-$1,872,614.48", "Payout_per_Unit": 1627.05}, {"LOCATION": "VICNSW", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$5,701,639.51", "Auction_Fees": "$16,890.00", "Guaranteed_Minimum": "$15,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$5,684,749.51", "Auction_Proceeds": "$6,643,303.75", "Payout_Ratio": "85.6", "Negative_Residues": "-$312,763.06", "Payout_per_Unit": 3789.83}, {"LOCATION": "TOTAL", "YEAR": 2015, "QTR": "04", "Total_Surplus": "$19,419,541.87", "Auction_Fees": "$51,334.00", "Guaranteed_Minimum": "$56,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$19,368,207.87", "Auction_Proceeds": "$19,422,609.14", "Payout_Ratio": "99.7", "Negative_Residues": "-$2,378,830.71", "Payout_per_Unit": null}, {"LOCATION": "NSWQLD", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$857.76", "Auction_Fees": "$4,884.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "-$4,026.24", "Auction_Proceeds": "$296,836.83", "Payout_Ratio": "-                   1.4", "Negative_Residues": "-$17.28", "Payout_per_Unit": -7.32}, {"LOCATION": "QLDNSW", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$15,918,506.44", "Auction_Fees": "$21,368.16", "Guaranteed_Minimum": "$12,390.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$15,896,429.26", "Auction_Proceeds": "$15,927,691.92", "Payout_Ratio": "97.1", "Negative_Residues": "-$158,610.72", "Payout_per_Unit": 13247.02}, {"LOCATION": "SAVIC", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$8,181,333.08", "Auction_Fees": "$3,927.84", "Guaranteed_Minimum": "$7,770.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,177,290.86", "Auction_Proceeds": "$5,949,907.93", "Payout_Ratio": "136.0", "Negative_Residues": "-$26,417.86", "Payout_per_Unit": 10619.86}, {"LOCATION": "VICSA", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$418,220.40", "Auction_Fees": "$98,419.20", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$319,801.20", "Auction_Proceeds": "$2,236,829.47", "Payout_Ratio": "14.3", "Negative_Residues": "-$7,201.14", "Payout_per_Unit": 363.41}, {"LOCATION": "NSWVIC", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$3,850,113.19", "Auction_Fees": "$5,668.00", "Guaranteed_Minimum": "$13,000.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$3,844,445.19", "Auction_Proceeds": "$2,884,516.92", "Payout_Ratio": "133.3", "Negative_Residues": "-$8,448.14", "Payout_per_Unit": 2957.27}, {"LOCATION": "VICNSW", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$4,892,574.36", "Auction_Fees": "$27,572.80", "Guaranteed_Minimum": "$15,100.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$4,864,843.76", "Auction_Proceeds": "$7,150,063.92", "Payout_Ratio": "67.6", "Negative_Residues": "-$157,195.75", "Payout_per_Unit": 3243.23}, {"LOCATION": "TOTAL", "YEAR": 2020, "QTR": "03", "Total_Surplus": "$33,261,605.23", "Auction_Fees": "$161,840.00", "Guaranteed_Minimum": "$62,560.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$33,098,784.03", "Auction_Proceeds": "$34,445,846.99", "Payout_Ratio": "94.5", "Negative_Residues": "-$357,890.90", "Payout_per_Unit": null}, {"LOCATION": "NSWQLD", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$858,408.62", "Auction_Fees": "$12,617.00", "Guaranteed_Minimum": "$5,500.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$845,791.62", "Auction_Proceeds": "$515,311.96", "Payout_Ratio": ")   6            164.1", "Negative_Residues": "-$2,273.87", "Payout_per_Unit": 1537.8}, {"LOCATION": "QLDNSW", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$31,418,091.45", "Auction_Fees": "$19,824.42", "Guaranteed_Minimum": "$12,130.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$31,398,005.21", "Auction_Proceeds": "$12,250,319.49", "Payout_Ratio": "253.2", "Negative_Residues": "-$1,704,739.88", "Payout_per_Unit": 26165.0}, {"LOCATION": "SAVIC", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$8,299,356.34", "Auction_Fees": "$5,274.50", "Guaranteed_Minimum": "$7,700.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$8,294,081.84", "Auction_Proceeds": "$5,842,406.44", "Payout_Ratio": "142.0", "Negative_Residues": "-$244,005.47", "Payout_per_Unit": 20735.2}, {"LOCATION": "VICSA", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$823,644.73", "Auction_Fees": "$63,210.40", "Guaranteed_Minimum": "$8,800.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$760,434.33", "Auction_Proceeds": "$2,318,250.73", "Payout_Ratio": "32.8", "Negative_Residues": "-$24,598.06", "Payout_per_Unit": 1086.33}, {"LOCATION": "NSWVIC", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$465,943.24", "Auction_Fees": "$7,373.44", "Guaranteed_Minimum": "$13,060.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$458,531.04", "Auction_Proceeds": "$3,357,447.39", "Payout_Ratio": "13.6", "Negative_Residues": "-$3,401,536.11", "Payout_per_Unit": 352.72}, {"LOCATION": "VICNSW", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$17,314,923.57", "Auction_Fees": "$31,305.40", "Guaranteed_Minimum": "$15,080.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$17,283,453.69", "Auction_Proceeds": "$7,541,084.50", "Payout_Ratio": "227.8", "Negative_Residues": "-$17,562.24", "Payout_per_Unit": 11522.3}, {"LOCATION": "TOTAL", "YEAR": 2020, "QTR": "04", "Total_Surplus": "$59,180,367.95", "Auction_Fees": "$139,605.16", "Guaranteed_Minimum": "$62,270.00", "Adjustment_Amount": "$0.00", "Residue_Distributed": "$59,040,297.73", "Auction_Proceeds": "$31,824,820.52", "Payout_Ratio": "184.3", "Negative_Residues": "-$5,394,715.63", "Payout_per_Unit": null}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.3-Attunga-Holdings">
+<a class="anchor" href="#3.3-Attunga-Holdings" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.3 Attunga Holdings<a class="anchor-link" href="#3.3-Attunga-Holdings"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_holdings</span> <span class="o">=</span> <span class="n">df_holding</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">all_holdings</span><span class="p">[</span><span class="s1">'yyyyqq'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_holdings</span><span class="p">[</span><span class="s1">'yyyyqq'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">all_holdings</span> <span class="o">=</span> <span class="n">all_holdings</span><span class="p">[</span><span class="n">all_holdings</span><span class="o">.</span><span class="n">yyyyqq</span> <span class="o">&gt;=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'0'</span> <span class="o">+</span> <span class="n">current_qtr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">all_holdings</span> <span class="o">=</span> <span class="n">all_holdings</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'yyyyqq'</span><span class="p">,</span><span class="s1">'Location'</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">all_holdings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
+      <th>Year</th>
+      <th>Qtr</th>
+      <th>Current Holding</th>
+      <th>VWAP</th>
+      <th>yyyyqq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NSWQLD</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>54</td>
+      <td>211.17</td>
+      <td>202102</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>NSWVIC</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>873.81</td>
+      <td>202102</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>SAVIC</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>4431.36</td>
+      <td>202102</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>VICNSW</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>4</td>
+      <td>8004.00</td>
+      <td>202102</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>VICSA</td>
+      <td>2021</td>
+      <td>Q2</td>
+      <td>25</td>
+      <td>1763.20</td>
+      <td>202102</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>NSWQLD</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>32</td>
+      <td>252.75</td>
+      <td>202103</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>NSWVIC</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>61</td>
+      <td>979.46</td>
+      <td>202103</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>SAVIC</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>22</td>
+      <td>5246.73</td>
+      <td>202103</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>VICNSW</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>10</td>
+      <td>4500.00</td>
+      <td>202103</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>VICSA</td>
+      <td>2021</td>
+      <td>Q3</td>
+      <td>20</td>
+      <td>2058.75</td>
+      <td>202103</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>NSWQLD</td>
+      <td>2021</td>
+      <td>Q4</td>
+      <td>74</td>
+      <td>795.49</td>
+      <td>202104</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>NSWVIC</td>
+      <td>2021</td>
+      <td>Q4</td>
+      <td>102</td>
+      <td>1164.16</td>
+      <td>202104</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>SAVIC</td>
+      <td>2021</td>
+      <td>Q4</td>
+      <td>40</td>
+      <td>5223.92</td>
+      <td>202104</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>VICSA</td>
+      <td>2021</td>
+      <td>Q4</td>
+      <td>30</td>
+      <td>1994.84</td>
+      <td>202104</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>NSWVIC</td>
+      <td>2022</td>
+      <td>Q1</td>
+      <td>10</td>
+      <td>4356.00</td>
+      <td>202201</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>SAVIC</td>
+      <td>2022</td>
+      <td>Q1</td>
+      <td>40</td>
+      <td>5637.44</td>
+      <td>202201</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>VICSA</td>
+      <td>2022</td>
+      <td>Q1</td>
+      <td>24</td>
+      <td>6148.76</td>
+      <td>202201</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>NSWQLD</td>
+      <td>2022</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>337.03</td>
+      <td>202202</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>NSWVIC</td>
+      <td>2022</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>826.29</td>
+      <td>202202</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>SAVIC</td>
+      <td>2022</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>4022.22</td>
+      <td>202202</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>NSWVIC</td>
+      <td>2022</td>
+      <td>Q3</td>
+      <td>70</td>
+      <td>854.48</td>
+      <td>202203</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>SAVIC</td>
+      <td>2022</td>
+      <td>Q3</td>
+      <td>34</td>
+      <td>4834.21</td>
+      <td>202203</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>VICSA</td>
+      <td>2022</td>
+      <td>Q3</td>
+      <td>20</td>
+      <td>2024.75</td>
+      <td>202203</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>NSWQLD</td>
+      <td>2022</td>
+      <td>Q4</td>
+      <td>8</td>
+      <td>1254.00</td>
+      <td>202204</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>NSWVIC</td>
+      <td>2022</td>
+      <td>Q4</td>
+      <td>60</td>
+      <td>772.71</td>
+      <td>202204</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>SAVIC</td>
+      <td>2022</td>
+      <td>Q4</td>
+      <td>40</td>
+      <td>4988.63</td>
+      <td>202204</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>VICSA</td>
+      <td>2022</td>
+      <td>Q4</td>
+      <td>10</td>
+      <td>2450.00</td>
+      <td>202204</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>NSWVIC</td>
+      <td>2023</td>
+      <td>Q1</td>
+      <td>10</td>
+      <td>4320.00</td>
+      <td>202301</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>SAVIC</td>
+      <td>2023</td>
+      <td>Q1</td>
+      <td>50</td>
+      <td>5665.24</td>
+      <td>202301</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>VICSA</td>
+      <td>2023</td>
+      <td>Q1</td>
+      <td>20</td>
+      <td>6816.00</td>
+      <td>202301</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NSWQLD</td>
+      <td>2023</td>
+      <td>Q2</td>
+      <td>8</td>
+      <td>404.00</td>
+      <td>202302</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>NSWVIC</td>
+      <td>2023</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>514.46</td>
+      <td>202302</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>SAVIC</td>
+      <td>2023</td>
+      <td>Q2</td>
+      <td>30</td>
+      <td>3416.00</td>
+      <td>202302</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>VICSA</td>
+      <td>2023</td>
+      <td>Q2</td>
+      <td>12</td>
+      <td>1743.17</td>
+      <td>202302</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>NSWQLD</td>
+      <td>2023</td>
+      <td>Q3</td>
+      <td>10</td>
+      <td>257.00</td>
+      <td>202303</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>NSWVIC</td>
+      <td>2023</td>
+      <td>Q3</td>
+      <td>90</td>
+      <td>637.55</td>
+      <td>202303</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>SAVIC</td>
+      <td>2023</td>
+      <td>Q3</td>
+      <td>45</td>
+      <td>4022.38</td>
+      <td>202303</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>VICSA</td>
+      <td>2023</td>
+      <td>Q3</td>
+      <td>20</td>
+      <td>1667.94</td>
+      <td>202303</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>NSWQLD</td>
+      <td>2023</td>
+      <td>Q4</td>
+      <td>10</td>
+      <td>1501.00</td>
+      <td>202304</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>NSWVIC</td>
+      <td>2023</td>
+      <td>Q4</td>
+      <td>60</td>
+      <td>725.17</td>
+      <td>202304</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>SAVIC</td>
+      <td>2023</td>
+      <td>Q4</td>
+      <td>34</td>
+      <td>4084.00</td>
+      <td>202304</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>VICSA</td>
+      <td>2023</td>
+      <td>Q4</td>
+      <td>20</td>
+      <td>1840.35</td>
+      <td>202304</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>NSWVIC</td>
+      <td>2024</td>
+      <td>Q1</td>
+      <td>10</td>
+      <td>4368.00</td>
+      <td>202401</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>SAVIC</td>
+      <td>2024</td>
+      <td>Q1</td>
+      <td>25</td>
+      <td>5154.00</td>
+      <td>202401</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>VICSA</td>
+      <td>2024</td>
+      <td>Q1</td>
+      <td>10</td>
+      <td>6115.20</td>
+      <td>202401</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+</body>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="SamCurtis111/attunga"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/attunga/jupyter/2021/04/05/SRA-Position.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/attunga/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/attunga/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/attunga/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Interactive Dashboard of Market Data.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
