@@ -1,176 +1,134 @@
+
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>NEM Market Data Dashboard | Interactive Dashboard of Market Data.</title>
-<meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="NEM Market Data Dashboard" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Interactive Dashboard of Market Data." />
-<meta property="og:description" content="Interactive Dashboard of Market Data." />
-<link rel="canonical" href="https://samcurtis111.github.io/attunga/" />
-<meta property="og:url" content="https://samcurtis111.github.io/attunga/" />
-<meta property="og:site_name" content="NEM Market Data Dashboard" />
-<meta property="og:image" content="https://samcurtis111.github.io/attunga/images/logo.png" />
-<script type="application/ld+json">
-{"url":"https://samcurtis111.github.io/attunga/","@type":"WebSite","headline":"NEM Market Data Dashboard","image":"https://samcurtis111.github.io/attunga/images/logo.png","name":"NEM Market Data Dashboard","description":"Interactive Dashboard of Market Data.","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/attunga/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://samcurtis111.github.io/attunga/feed.xml" title="NEM Market Data Dashboard" /><link rel="shortcut icon" type="image/x-icon" href="/attunga/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
 
-<script>
-function wrap_img(fn) {
-    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-        var elements = document.querySelectorAll(".post img");
-        Array.prototype.forEach.call(elements, function(el, i) {
-            if (el.getAttribute("title") && (el.className != "emoji")) {
-                const caption = document.createElement('figcaption');
-                var node = document.createTextNode(el.getAttribute("title"));
-                caption.appendChild(node);
-                const wrapper = document.createElement('figure');
-                wrapper.className = 'image';
-                el.parentNode.insertBefore(wrapper, el);
-                el.parentNode.removeChild(el);
-                wrapper.appendChild(el);
-                wrapper.appendChild(caption);
-            }
-        });
-    } else { document.addEventListener('DOMContentLoaded', fn); }
-}
-window.onload = wrap_img;
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-    document.addEventListener("DOMContentLoaded", function(){
-    // add link icon to anchor tags
-    var elem = document.querySelectorAll(".anchor-link")
-    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
-    });
-</script>
 </head>
-<body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/attunga/">NEM Market Data Dashboard</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
+<style>
 
-        <div class="trigger"><a class="page-link" href="/attunga/about/">About Me</a><a class="page-link" href="/attunga/search/">Search</a><a class="page-link" href="/attunga/categories/">Tags</a></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="home"><p>This site is built with <a href="https://github.com/fastai/fastpages">fastpages</a>, An easy to use blogging platform with extra features for Jupyter Notebooks.</p>
+body {
 
-<p><img src="/attunga/images/diagram.png" alt="" title="https://github.com/fastai/fastpages" /></p>
+	background-image: url('grunge_patterns.jpg');
+	background-attachment: fixed;
+	color: #333;
+}
 
-<p><a href="https://github.com/fastai/fastpages">fastpages</a> automates the process of creating blog posts via GitHub Actions, so you don’t have to fuss with conversion scripts.  A full list of features can be found on <a href="https://github.com/fastai/fastpages">GitHub</a>.</p>
+.box {
+	border-radius: 3px;
+	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+}
 
-<p>You can edit the <code class="language-plaintext highlighter-rouge">index.html</code> file to change this content.</p>
+.lightbox {
+	zoom: 1.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.8);
+	text-align: center;
+	margin: auto;
 
-<h1 id="posts">Posts</h1>
+}
+
+div.horizontal {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+
+div.vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+
+::-webkit-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+::-moz-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+
+</style>
+
+<body>
+
+	<div id="loginbox" class="lightbox" >
+		<div class="horizontal">
+			<div class="vertical">
+				<div class="box">
+					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
+					<button id="loginbutton" type="button">Enter</button>
+					<p id="wrongPassword" style="display: none">wrong password</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-  
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
+	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
+	<script type="text/javascript">
+	"use strict";
 
- 
-  
 
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/Weather-Data.html">
-    Weather Data
-    </a>
-</h3><p class="post-meta-description">BoM Temperature and Precipitation Data</p><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/Annualised-Volatilities.html">
-    Annualised Volatilities Report
-    </a>
-</h3><p class="post-meta-description">Updated volatilities</p><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/2021/05/24/Daily-Summary-(In-Progress).html">
-    Morning Review
-    </a>
-</h3><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/NEM-Data.html">
-    NEM Data
-    </a>
-</h3><p class="post-meta-description">Updated NEM data</p><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/SRA-Position.html">
-    SRA End of Day Position Report
-    </a>
-</h3><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/Option-Upload-Testing.html">
-    Option Upload Testing
-    </a>
-</h3><p class="post-meta-description">Updated NEM data</p><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/PASA.html">
-    PASA
-    </a>
-</h3><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html">
-    Option Deltas
-    </a>
-</h3><p class="post-meta-description">Updated NEM data</p><p class="post-meta">May 24, 2021</p>
-</li><li><h3>
-    <a class="post-link" href="/attunga/markdown/2020/01/14/test-markdown-post.html">
-    An Example Markdown Post
-    </a>
-</h3><p class="post-meta-description">A minimal example of using markdown with fastpages.</p><p class="post-meta">Jan 14, 2020</p>
-</li></ul>
+	function loadPage(pwd) {
 
-    </div>
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/attunga/"></data>
+		var hash= pwd;
+		hash= Sha1.hash(pwd);
+		var url= hash + "/index.html";
 
-  <div class="wrapper">
+		$.ajax({
+			url : url,
+			dataType : "html",
+			success : function(data) {
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col">
-        <p class="feed-subscribe">
-          <a href="/attunga/feed.xml">
-            <svg class="svg-icon orange">
-              <use xlink:href="/attunga/assets/minima-social-icons.svg#rss"></use>
-            </svg><span>Subscribe</span>
-          </a>
-        </p>
-      </div>
-      <div class="footer-col">
-        <p>Interactive Dashboard of Market Data.</p>
-      </div>
-    </div>
+				window.location= url;
 
-    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
-</div>
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
 
-  </div>
 
-</footer>
+				parent.location.hash= hash;
+
+				//$("#wrongPassword").show();
+				$("#password").attr("placeholder","wrong password");
+				$("#password").val("");
+			}
+		});
+	}
+
+
+	$("#loginbutton").on("click", function() {
+		loadPage($("#password").val());
+	});
+	$("#password").keypress(function(e) {
+		if (e.which == 13) {
+
+			loadPage($("#password").val());
+		}
+	});
+	$("#password").focus();
+
+	</script>
+
 </body>
-
 </html>
