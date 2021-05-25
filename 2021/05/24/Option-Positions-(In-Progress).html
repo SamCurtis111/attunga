@@ -8,16 +8,15 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Option Deltas" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Updated NEM data" />
-<meta property="og:description" content="Updated NEM data" />
-<link rel="canonical" href="https://samcurtis111.github.io/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html" />
-<meta property="og:url" content="https://samcurtis111.github.io/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html" />
+<meta name="description" content="Interactive Dashboard of Market Data." />
+<meta property="og:description" content="Interactive Dashboard of Market Data." />
+<link rel="canonical" href="https://samcurtis111.github.io/attunga/2021/05/24/Option-Positions-(In-Progress).html" />
+<meta property="og:url" content="https://samcurtis111.github.io/attunga/2021/05/24/Option-Positions-(In-Progress).html" />
 <meta property="og:site_name" content="NEM Market Data Dashboard" />
-<meta property="og:image" content="https://samcurtis111.github.io/attunga/images/chart-preview.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-05-24T00:00:00-05:00" />
 <script type="application/ld+json">
-{"url":"https://samcurtis111.github.io/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html","@type":"BlogPosting","headline":"Option Deltas","dateModified":"2021-05-24T00:00:00-05:00","datePublished":"2021-05-24T00:00:00-05:00","image":"https://samcurtis111.github.io/attunga/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://samcurtis111.github.io/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html"},"description":"Updated NEM data","@context":"https://schema.org"}</script>
+{"url":"https://samcurtis111.github.io/attunga/2021/05/24/Option-Positions-(In-Progress).html","@type":"BlogPosting","headline":"Option Deltas","dateModified":"2021-05-24T00:00:00-05:00","datePublished":"2021-05-24T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://samcurtis111.github.io/attunga/2021/05/24/Option-Positions-(In-Progress).html"},"description":"Interactive Dashboard of Market Data.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/attunga/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://samcurtis111.github.io/attunga/feed.xml" title="NEM Market Data Dashboard" /><link rel="shortcut icon" type="image/x-icon" href="/attunga/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +71,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Option Deltas</h1><p class="page-description">Updated NEM data</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-24T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Option Deltas</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-05-24T00:00:00-05:00" itemprop="datePublished">
         May 24, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -83,21 +82,33 @@ window.onload = wrap_img;
 </span></p>
 
     
-      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
-      
-        <a class="category-tags-link" href="/attunga/categories/#jupyter">jupyter</a>
-        
-      
-      </p>
-    
 
     
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/SamCurtis111/attunga/tree/master/_notebooks/Option Positions (In Progress).ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/attunga/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/SamCurtis111/attunga/master?filepath=_notebooks%2FOption+Positions+%28In+Progress%29.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/attunga/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/SamCurtis111/attunga/blob/master/_notebooks/Option Positions (In Progress).ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/attunga/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Generate-Plots">Generate Plots </a></li>
-</ul><!--
+    <!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -115,20 +126,20 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-<span class="n">HTML</span><span class="p">(</span><span class="s1">'''&lt;script&gt;</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
 <span class="s1">code_show=true; </span>
 <span class="s1">function code_toggle() {</span>
 <span class="s1"> if (code_show){</span>
-<span class="s1"> $('div.input').hide();</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
 <span class="s1"> } else {</span>
-<span class="s1"> $('div.input').show();</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
 <span class="s1"> }</span>
 <span class="s1"> code_show = !code_show</span>
 <span class="s1">} </span>
 <span class="s1">$( document ).ready(code_toggle);</span>
 <span class="s1">&lt;/script&gt;</span>
 <span class="s1">The raw code for this IPython notebook is by default hidden for easier reading.</span>
-<span class="s1">To toggle on/off the raw code, click &lt;a href="javascript:code_toggle()"&gt;here&lt;/a&gt;.'''</span><span class="p">)</span>
+<span class="s1">To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -265,12 +276,9 @@ To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generate-Plots">
-<a class="anchor" href="#Generate-Plots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generate Plots<a class="anchor-link" href="#Generate-Plots"> </a>
-</h2>
+<h2 id="Generate-Plots">Generate Plots<a class="anchor-link" href="#Generate-Plots"> </a></h2>
 </div>
 </div>
 </div>
@@ -383,15 +391,7 @@ if (outputEl) {{
 
 
 
-  </div><!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="SamCurtis111/attunga"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script><a class="u-url" href="/attunga/jupyter/2021/05/24/Option-Positions-(In-Progress).html" hidden></a>
+  </div><a class="u-url" href="/attunga/2021/05/24/Option-Positions-(In-Progress).html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
