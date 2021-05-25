@@ -47,7 +47,7 @@
     
         ,"post4": {
             "title": "Option Deltas",
-            "content": "from IPython.display import display, HTML HTML(&#39;&#39;&#39;&lt;script&gt; code_show=true; function code_toggle() { if (code_show){ $(&#39;div.input&#39;).hide(); } else { $(&#39;div.input&#39;).show(); } code_show = !code_show } $( document ).ready(code_toggle); &lt;/script&gt; The raw code for this IPython notebook is by default hidden for easier reading. To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;) . The raw code for this IPython notebook is by default hidden for easier reading. To toggle on/off the raw code, click here. Generate Plots . display(output_state) .",
+            "content": "from IPython.display import display, HTML HTML(&#39;&#39;&#39;&lt;script&gt; code_show=true; function code_toggle() { if (code_show){ $(&#39;div.input&#39;).hide(); } else { $(&#39;div.input&#39;).show(); } code_show = !code_show } $( document ).ready(code_toggle); &lt;/script&gt; The raw code for this IPython notebook is by default hidden for easier reading. To toggle on/off the raw code, click &lt;a href=&quot;javascript:code_toggle()&quot;&gt;here&lt;/a&gt;.&#39;&#39;&#39;) . The raw code for this IPython notebook is by default hidden for easier reading. To toggle on/off the raw code, click here. Generate Plots .",
             "url": "https://samcurtis111.github.io/attunga/2021/05/24/Option-Positions-(In-Progress).html",
             "relUrl": "/2021/05/24/Option-Positions-(In-Progress).html",
             "date": " • May 24, 2021"
