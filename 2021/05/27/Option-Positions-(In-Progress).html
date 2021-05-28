@@ -370,7 +370,9 @@ To toggle on/off the raw code, click <a href="javascript:code_toggle()">here</a>
 
 <span class="nd">@interact</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">option_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
 <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="s1">&#39;QLD&#39;</span><span class="p">):</span>
-    <span class="n">fig</span><span class="o">=</span><span class="n">plot_generator</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">=</span><span class="n">plot_generator</span><span class="p">(</span><span class="n">state</span><span class="p">)</span><span class="c1">#.show()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_figure.html&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">state</span><span class="p">),</span> <span class="n">auto_open</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
