@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Annualised Volatilities Report | NEM Market Data Dashboard</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Annualised Volatilities Report" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Updated volatilities" />
+<meta property="og:description" content="Updated volatilities" />
+<link rel="canonical" href="https://samcurtis111.github.io/attunga/jupyter/2021/06/05/Annualised-Volatilities.html" />
+<meta property="og:url" content="https://samcurtis111.github.io/attunga/jupyter/2021/06/05/Annualised-Volatilities.html" />
+<meta property="og:site_name" content="NEM Market Data Dashboard" />
+<meta property="og:image" content="https://samcurtis111.github.io/attunga/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"url":"https://samcurtis111.github.io/attunga/jupyter/2021/06/05/Annualised-Volatilities.html","@type":"BlogPosting","headline":"Annualised Volatilities Report","dateModified":"2021-06-05T00:00:00-05:00","datePublished":"2021-06-05T00:00:00-05:00","image":"https://samcurtis111.github.io/attunga/images/chart-preview.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://samcurtis111.github.io/attunga/jupyter/2021/06/05/Annualised-Volatilities.html"},"description":"Updated volatilities","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/attunga/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://samcurtis111.github.io/attunga/feed.xml" title="NEM Market Data Dashboard" /><link rel="shortcut icon" type="image/x-icon" href="/attunga/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/attunga/">NEM Market Data Dashboard</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/attunga/about/">About Me</a><a class="page-link" href="/attunga/search/">Search</a><a class="page-link" href="/attunga/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Annualised Volatilities Report</h1><p class="page-description">Updated volatilities</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-05T00:00:00-05:00" itemprop="datePublished">
+        Jun 5, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/attunga/categories/#jupyter">jupyter</a>
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Baseload-Contracts">Baseload Contracts </a></li>
+<li class="toc-entry toc-h2"><a href="#Caps">Caps </a></li>
+<li class="toc-entry toc-h2"><a href="#Strips">Strips </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/Annualised Volatilities.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">'display.max_rows'</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>    <span class="c1"># prevent dfs from being truncated</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"C:/Users/SamCurtis/AppData/Local/bipy/28095931/projects/02f1bf62483a4d82b93898b71672e018"</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="s2">"tableau_vols.xlsx"</span><span class="p">)</span>
+<span class="n">raw_baseload</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Baseload'</span><span class="p">)</span>
+<span class="n">raw_caps</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Caps'</span><span class="p">)</span>
+<span class="n">raw_strips</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'Strips'</span><span class="p">)</span>
+
+
+<span class="n">last_update_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"C:/Users/SamCurtis/AppData/Local/bipy/28095931/projects/02f1bf62483a4d82b93898b71672e018"</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="s2">"volatility_data.xlsx"</span><span class="p">)</span>
+<span class="n">last_updated</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">last_update_path</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">'last_updated'</span><span class="p">)</span>
+<span class="n">last_updated</span> <span class="o">=</span> <span class="n">last_updated</span><span class="p">[</span><span class="s1">'updated'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Last Updated: '</span><span class="p">,</span> <span class="n">last_updated</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Last Updated:  2021-06-02 10:17:53
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baseload-Contracts">
+<a class="anchor" href="#Baseload-Contracts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Baseload Contracts<a class="anchor-link" href="#Baseload-Contracts"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">baseload_pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">raw_baseload</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"state"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">,</span><span class="s2">"quater"</span><span class="p">])</span>
+<span class="n">baseload_pivot</span> <span class="o">=</span> <span class="n">baseload_pivot</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">baseload_pivot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>annual</th>
+      <th>monthly</th>
+      <th>qtrly</th>
+      <th>weekly</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>year</th>
+      <th>quater</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="17" valign="top">NSW</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>0.3183</td>
+      <td>0.8198</td>
+      <td>0.5456</td>
+      <td>1.1557</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2027</td>
+      <td>0.2730</td>
+      <td>0.2393</td>
+      <td>0.4931</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2031</td>
+      <td>0.2931</td>
+      <td>0.2383</td>
+      <td>0.5390</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>0.1910</td>
+      <td>0.1395</td>
+      <td>0.2442</td>
+      <td>0.1913</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1696</td>
+      <td>0.1625</td>
+      <td>0.1858</td>
+      <td>0.2873</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1550</td>
+      <td>0.1443</td>
+      <td>0.1554</td>
+      <td>0.1748</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1610</td>
+      <td>0.1386</td>
+      <td>0.1907</td>
+      <td>0.1788</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>0.1682</td>
+      <td>0.1533</td>
+      <td>0.2263</td>
+      <td>0.1889</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1825</td>
+      <td>0.1240</td>
+      <td>0.1727</td>
+      <td>0.2014</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1821</td>
+      <td>0.1216</td>
+      <td>0.1741</td>
+      <td>0.2046</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1628</td>
+      <td>0.1185</td>
+      <td>0.1684</td>
+      <td>0.1964</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.1190</td>
+      <td>0.1811</td>
+      <td>0.2159</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0760</td>
+      <td>0.1421</td>
+      <td>0.0864</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.0951</td>
+      <td>0.0808</td>
+      <td>0.1025</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0836</td>
+      <td>0.0733</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.1755</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0755</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">QLD</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>0.3681</td>
+      <td>0.9547</td>
+      <td>0.6287</td>
+      <td>1.6844</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2559</td>
+      <td>0.5563</td>
+      <td>0.3685</td>
+      <td>1.1535</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2049</td>
+      <td>0.2464</td>
+      <td>0.2189</td>
+      <td>0.4479</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>0.1757</td>
+      <td>0.2321</td>
+      <td>0.2225</td>
+      <td>0.4185</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1759</td>
+      <td>0.2587</td>
+      <td>0.2314</td>
+      <td>0.3733</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1616</td>
+      <td>0.1990</td>
+      <td>0.1857</td>
+      <td>0.3736</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1687</td>
+      <td>0.2145</td>
+      <td>0.2094</td>
+      <td>0.3741</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>0.1592</td>
+      <td>0.1551</td>
+      <td>0.2080</td>
+      <td>0.3132</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1689</td>
+      <td>0.1503</td>
+      <td>0.1905</td>
+      <td>0.2900</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1611</td>
+      <td>0.1717</td>
+      <td>0.1885</td>
+      <td>0.3561</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2141</td>
+      <td>0.1615</td>
+      <td>0.2115</td>
+      <td>0.3364</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.0730</td>
+      <td>0.1511</td>
+      <td>0.0668</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0926</td>
+      <td>0.1358</td>
+      <td>0.0664</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.1453</td>
+      <td>0.1542</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.1375</td>
+      <td>0.1635</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.7137</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0967</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">SA</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>0.2868</td>
+      <td>0.6359</td>
+      <td>0.4615</td>
+      <td>0.5045</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1774</td>
+      <td>0.2604</td>
+      <td>0.2225</td>
+      <td>0.3580</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1687</td>
+      <td>0.1144</td>
+      <td>0.1699</td>
+      <td>0.0393</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>0.2041</td>
+      <td>0.2044</td>
+      <td>0.2414</td>
+      <td>0.0887</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1694</td>
+      <td>0.1640</td>
+      <td>0.1992</td>
+      <td>0.0409</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1783</td>
+      <td>0.1409</td>
+      <td>0.1692</td>
+      <td>0.0275</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1671</td>
+      <td>0.1369</td>
+      <td>0.1603</td>
+      <td>0.0272</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>0.2025</td>
+      <td>0.2121</td>
+      <td>0.2790</td>
+      <td>0.0267</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.2911</td>
+      <td>0.5186</td>
+      <td>0.3824</td>
+      <td>0.0266</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3108</td>
+      <td>0.5055</td>
+      <td>0.3492</td>
+      <td>0.1909</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2331</td>
+      <td>0.0927</td>
+      <td>0.1891</td>
+      <td>0.1902</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.1718</td>
+      <td>0.1970</td>
+      <td>0.1203</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.4251</td>
+      <td>0.3597</td>
+      <td>0.3022</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.0453</td>
+      <td>0.1538</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0452</td>
+      <td>0.2772</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.0984</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0452</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">VIC</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>0.3640</td>
+      <td>0.8184</td>
+      <td>0.6185</td>
+      <td>0.6376</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2292</td>
+      <td>0.2483</td>
+      <td>0.2837</td>
+      <td>0.2750</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2322</td>
+      <td>0.1962</td>
+      <td>0.2737</td>
+      <td>0.2476</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>0.2428</td>
+      <td>0.1530</td>
+      <td>0.3023</td>
+      <td>0.1672</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.2393</td>
+      <td>0.2176</td>
+      <td>0.3344</td>
+      <td>0.2557</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2258</td>
+      <td>0.2037</td>
+      <td>0.3022</td>
+      <td>0.2587</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2484</td>
+      <td>0.1444</td>
+      <td>0.3734</td>
+      <td>0.1166</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>0.1967</td>
+      <td>0.1257</td>
+      <td>0.2785</td>
+      <td>0.1531</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1696</td>
+      <td>0.1200</td>
+      <td>0.2297</td>
+      <td>0.1608</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.1896</td>
+      <td>0.1204</td>
+      <td>0.2477</td>
+      <td>0.1240</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.1906</td>
+      <td>0.1195</td>
+      <td>0.2871</td>
+      <td>0.1420</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.1194</td>
+      <td>0.2599</td>
+      <td>0.0785</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.1545</td>
+      <td>0.1955</td>
+      <td>0.1322</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.2719</td>
+      <td>0.2556</td>
+      <td>0.0631</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.2434</td>
+      <td>0.2265</td>
+      <td>0.0353</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3814</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.2371</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Caps">
+<a class="anchor" href="#Caps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Caps<a class="anchor-link" href="#Caps"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cap_pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">raw_caps</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"state"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">,</span><span class="s2">"quater"</span><span class="p">])</span>
+<span class="n">cap_pivot</span> <span class="o">=</span> <span class="n">cap_pivot</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">cap_pivot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>annual</th>
+      <th>monthly</th>
+      <th>qtrly</th>
+      <th>weekly</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>year</th>
+      <th>quater</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="17" valign="top">NSW</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>1.2677</td>
+      <td>3.8731</td>
+      <td>2.4494</td>
+      <td>2.8816</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1.1141</td>
+      <td>0.7400</td>
+      <td>1.0492</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.4597</td>
+      <td>NaN</td>
+      <td>0.4935</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.4091</td>
+      <td>NaN</td>
+      <td>0.3786</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.4670</td>
+      <td>NaN</td>
+      <td>0.7364</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.5760</td>
+      <td>NaN</td>
+      <td>1.0268</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.3976</td>
+      <td>NaN</td>
+      <td>0.7590</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3853</td>
+      <td>NaN</td>
+      <td>0.5166</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.3855</td>
+      <td>NaN</td>
+      <td>0.7497</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.3324</td>
+      <td>NaN</td>
+      <td>0.3078</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0378</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3531</td>
+      <td>NaN</td>
+      <td>0.0867</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>2.3025</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">QLD</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>1.2292</td>
+      <td>3.0893</td>
+      <td>2.2779</td>
+      <td>5.1332</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>2.0386</td>
+      <td>1.3246</td>
+      <td>3.7988</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.4006</td>
+      <td>NaN</td>
+      <td>0.2846</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.7663</td>
+      <td>NaN</td>
+      <td>1.5186</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.5826</td>
+      <td>NaN</td>
+      <td>1.0311</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1.6447</td>
+      <td>NaN</td>
+      <td>3.6043</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.3832</td>
+      <td>NaN</td>
+      <td>0.6781</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.5909</td>
+      <td>NaN</td>
+      <td>0.2813</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.3902</td>
+      <td>NaN</td>
+      <td>0.4599</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.3902</td>
+      <td>NaN</td>
+      <td>0.4599</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.3919</td>
+      <td>NaN</td>
+      <td>0.2803</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.5796</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">SA</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>1.0620</td>
+      <td>3.4077</td>
+      <td>2.0807</td>
+      <td>0.8059</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.6955</td>
+      <td>0.6889</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.8202</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.4253</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.7376</td>
+      <td>NaN</td>
+      <td>0.6322</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.6142</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.5910</td>
+      <td>NaN</td>
+      <td>0.1892</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3054</td>
+      <td>NaN</td>
+      <td>0.1165</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.3844</td>
+      <td>NaN</td>
+      <td>0.4446</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.3844</td>
+      <td>NaN</td>
+      <td>0.4446</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.2357</td>
+      <td>NaN</td>
+      <td>0.4446</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.2735</td>
+      <td>NaN</td>
+      <td>0.1165</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.4974</td>
+      <td>NaN</td>
+      <td>0.9249</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.4974</td>
+      <td>NaN</td>
+      <td>0.9249</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.1982</td>
+      <td>NaN</td>
+      <td>0.4172</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3231</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="17" valign="top">VIC</th>
+      <th rowspan="3" valign="top">2021</th>
+      <th>2</th>
+      <td>1.5429</td>
+      <td>5.0785</td>
+      <td>3.0535</td>
+      <td>1.2225</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>1.5175</td>
+      <td>1.0261</td>
+      <td>0.6760</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.3633</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2022</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.3302</td>
+      <td>NaN</td>
+      <td>0.1681</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.7957</td>
+      <td>NaN</td>
+      <td>0.2488</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.5942</td>
+      <td>NaN</td>
+      <td>0.0690</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.2390</td>
+      <td>NaN</td>
+      <td>0.0707</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2023</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.2669</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.5916</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.3004</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="4" valign="top">2024</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2025</th>
+      <th>1</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>0.0000</td>
+      <td>NaN</td>
+      <td>0.0000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Strips">
+<a class="anchor" href="#Strips" aria-hidden="true"><span class="octicon octicon-link"></span></a>Strips<a class="anchor-link" href="#Strips"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">strips_pivot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">raw_strips</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"state"</span><span class="p">,</span> <span class="s2">"year"</span><span class="p">,</span><span class="s2">"prod_type"</span><span class="p">])</span>
+<span class="n">strips_pivot</span> <span class="o">=</span> <span class="n">strips_pivot</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">strips_pivot</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>annual</th>
+      <th>monthly</th>
+      <th>qtrly</th>
+      <th>quater</th>
+      <th>weekly</th>
+    </tr>
+    <tr>
+      <th>state</th>
+      <th>year</th>
+      <th>prod_type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="7" valign="top">NSW</th>
+      <th rowspan="2" valign="top">2022</th>
+      <th>Cal</th>
+      <td>0.1463</td>
+      <td>0.1260</td>
+      <td>0.1699</td>
+      <td>4</td>
+      <td>0.1924</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1703</td>
+      <td>0.2046</td>
+      <td>0.2056</td>
+      <td>2</td>
+      <td>0.3638</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2023</th>
+      <th>Cal</th>
+      <td>0.1523</td>
+      <td>0.1217</td>
+      <td>0.1658</td>
+      <td>4</td>
+      <td>0.1918</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1360</td>
+      <td>0.1279</td>
+      <td>0.1653</td>
+      <td>2</td>
+      <td>0.1774</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2024</th>
+      <th>Cal</th>
+      <td>NaN</td>
+      <td>0.0741</td>
+      <td>0.0973</td>
+      <td>4</td>
+      <td>0.1028</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.0870</td>
+      <td>0.1390</td>
+      <td>2</td>
+      <td>0.1214</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.0862</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0.0248</td>
+    </tr>
+    <tr>
+      <th rowspan="6" valign="top">QLD</th>
+      <th rowspan="2" valign="top">2022</th>
+      <th>Cal</th>
+      <td>0.1541</td>
+      <td>0.2138</td>
+      <td>0.1997</td>
+      <td>4</td>
+      <td>0.3788</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1807</td>
+      <td>0.3001</td>
+      <td>0.2384</td>
+      <td>2</td>
+      <td>0.5839</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2023</th>
+      <th>Cal</th>
+      <td>0.1570</td>
+      <td>0.1554</td>
+      <td>0.1926</td>
+      <td>4</td>
+      <td>0.3159</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1438</td>
+      <td>0.1367</td>
+      <td>0.1777</td>
+      <td>2</td>
+      <td>0.2404</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2024</th>
+      <th>Cal</th>
+      <td>NaN</td>
+      <td>0.1048</td>
+      <td>0.1402</td>
+      <td>4</td>
+      <td>0.0356</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.0841</td>
+      <td>0.1412</td>
+      <td>2</td>
+      <td>0.1357</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">SA</th>
+      <th rowspan="2" valign="top">2022</th>
+      <th>Cal</th>
+      <td>0.1464</td>
+      <td>0.1455</td>
+      <td>0.1733</td>
+      <td>4</td>
+      <td>0.0426</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1393</td>
+      <td>0.1374</td>
+      <td>0.1679</td>
+      <td>2</td>
+      <td>0.0893</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2023</th>
+      <th>Cal</th>
+      <td>0.2139</td>
+      <td>0.2260</td>
+      <td>0.2356</td>
+      <td>4</td>
+      <td>0.0996</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1530</td>
+      <td>0.1452</td>
+      <td>0.1925</td>
+      <td>2</td>
+      <td>0.0274</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2024</th>
+      <th>Cal</th>
+      <td>NaN</td>
+      <td>0.1023</td>
+      <td>0.2016</td>
+      <td>4</td>
+      <td>0.1041</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.2115</td>
+      <td>0.2188</td>
+      <td>2</td>
+      <td>0.1907</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.0499</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0.0000</td>
+    </tr>
+    <tr>
+      <th rowspan="7" valign="top">VIC</th>
+      <th rowspan="2" valign="top">2022</th>
+      <th>Cal</th>
+      <td>0.2050</td>
+      <td>0.1535</td>
+      <td>0.2802</td>
+      <td>4</td>
+      <td>0.1907</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.2123</td>
+      <td>0.1784</td>
+      <td>0.2734</td>
+      <td>2</td>
+      <td>0.2058</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2023</th>
+      <th>Cal</th>
+      <td>0.1635</td>
+      <td>0.1090</td>
+      <td>0.2421</td>
+      <td>4</td>
+      <td>0.1391</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>0.1666</td>
+      <td>0.1233</td>
+      <td>0.2379</td>
+      <td>2</td>
+      <td>0.1619</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2024</th>
+      <th>Cal</th>
+      <td>NaN</td>
+      <td>0.1540</td>
+      <td>0.2027</td>
+      <td>4</td>
+      <td>0.0640</td>
+    </tr>
+    <tr>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.1134</td>
+      <td>0.2104</td>
+      <td>2</td>
+      <td>0.0758</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <th>Fin</th>
+      <td>NaN</td>
+      <td>0.2690</td>
+      <td>NaN</td>
+      <td>2</td>
+      <td>0.0207</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="SamCurtis111/attunga"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/attunga/jupyter/2021/06/05/Annualised-Volatilities.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/attunga/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/attunga/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/attunga/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Interactive Dashboard of Market Data.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/attunga/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
